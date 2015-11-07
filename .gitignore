@@ -63,3 +63,7 @@ platforms/ios/CordovaLib/build/
 platforms/ios/www/
 platforms/ios/.staging/
 platforms/ios/Shop.xcodeproj/project.xcworkspace/xcuserdata/
+.sencha/
+cordova/
+build/
+touch/

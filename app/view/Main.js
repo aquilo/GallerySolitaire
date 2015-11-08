@@ -260,7 +260,7 @@ Ext.define('GallerySolitaire.view.Main', {
       }, {
         xtype: 'fieldset',
         title: '<div class="fst">Computer Aided Playing</div>',
-        instructions: '<b>Auto move reasons</b><div style="text-align:left"><br/><b>Twin</b> = card of same suit and rank<br/><br/><ol><li><b>T ok</b>: Twin is already ok.<li><b>2 poss</b>: There are two possibilities for this card.<li><b>F clean</b>: Foundation row is completely clear.<li><b>just 1</b>: At the end and just one card movable.<li><b>T row</b>: Twin is on the same foundation row.<li><b>Tbelow</b>: Twin lies under this card.<li><b>T botm</b>: Twin (image) lies directly at the bottom.<li><b>TuBase</b>: Twin lies directly under its own base.</ol></div>',
+        instructions: '<b>Auto move reasons</b><div style="text-align:left"><br/><b>Twin</b> = card of same suit and rank<br/><br/><ol><li><b>T ok</b>: Twin is already ok.<li><b>2 poss</b>: There are two possibilities for this card.<li><b>F clean</b>: Foundation row is completely clear.<li><b>just 1</b>: At the end and just one card movable.<li><b>T row</b>: Twin is on the same foundation row.<li><b>Tbelow</b>: Twin lies under this card.<li><b>T botm</b>: Twin (image) lies directly at the bottom.<li><b>TuBase</b>: Twin lies directly under its own base.<li><b>Tjammed</b>: Twin unreachable (jammed)</ol></div>',
         items: [
           /*               {
               xtype: 'selectfield',
@@ -354,7 +354,6 @@ Ext.define('GallerySolitaire.view.Main', {
         html: '---',
         styleHtmlContent: true,
         scrollable: 'vertical'
-
       }],
       listeners: {
         'show': function (panel) {

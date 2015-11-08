@@ -21,7 +21,7 @@ boolean isProcessing = false;
 
 // --------------------------------------------------------------
 // top left of Foundation, Tableau, Aces, Stock
-String version = "Version 2.3 - 7"; // a
+String version = "Version 2.4"; // a
 String device = "";
 String mymsg;
 int XSF, YSF, XST, YST, XSA, YSA, XSS, YSS; 
@@ -861,7 +861,7 @@ void sayAutoReason(int id, int type, String what, String card) {
   if (global_sayAuto != 1) return;
   String shortTxt[] = {
     "", "T ok", "2 poss", "F clean", "just 1", "T botm", 
-    "T row", "Tbelow", "T botm", "TuBase"
+    "T row", "Tbelow", "T botm", "TuBase", "Tjammed"
   };
   autoStat[type] ++;
   /*  if (false) {
@@ -872,8 +872,8 @@ void sayAutoReason(int id, int type, String what, String card) {
    }
    */
  // println(id + " " + type + " " + what + " " + card);
-  os.myfill4(255, 255, 0, 180);
-  os.myrect(allPiles[id].getTopX(), allPiles[id].yc - 9, CARDWIDTH, 15);
+  os.myfill4(255, 255, 0, 200);
+  os.myrect(allPiles[id].getTopX(), allPiles[id].yc - 13, CARDWIDTH, 26);
   os.mystroke(0);
   os.myfill(0);
   os.mytextFont(myFont, F10);  

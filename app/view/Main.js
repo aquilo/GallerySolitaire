@@ -159,13 +159,27 @@ Ext.define('GallerySolitaire.view.Main', {
         xtype: 'label',
         //            styleHtmlCls: 'rules',
         styleHtmlContent: true,
-        html: '<div class="rules"><center><h1>Gallery Solitaire</h1>Version 2.3, &copy; 2015, Adrian Herzog<br/><br/><div style="line-height:2.5em">' + 
-        'Website: <a href="#" onclick="window.open(encodeURI(\'http://gallery.mapresso.com#phonegap=external\'), \'_system\')">' +
-        '<img src="resources/data/img/appicon-Small.png" width="29" "height="29" align="middle"> http://gallery.mapresso.com</a><br/>' + 
-        'Facebook: <a href="#" onclick="window.open(encodeURI(\'http://facebook.com/GallerySol#phonegap=external\'), \'_system\')">' +
-        '<img src="resources/data/img/FB_logo_blue_29.png" width="29" "height="29" align="middle"> http://facebook.com/GallerySol</a><br/>' + 
-        'Twitter: <a href="#" onclick="window.open(encodeURI(\'http://twitter.com/gallerysol1#phonegap=external\'), \'_system\')">' + 
-        '<img src="resources/data/img/Twitter_logo_blue_32.png" width="29" "height="29" align="middle"> @gallerysol1</a></div><br/><br/></center></div>'
+        html: '<div class="rules"><center><h1>Gallery Solitaire</h1>Version 2.4, &copy; 2015, Adrian Herzog<br/><br/>' +
+        '<table border=0>' + 
+
+        '<tr><td align="right">Website:</td>' +
+        '<td align="center" width=31><a href="#" onclick="window.open(encodeURI(\'http://gallery.mapresso.com#phonegap=external\'), \'_system\')">' +
+        '<img src="resources/data/img/appicon-Small.png" width="29" "height="29" align="middle"></a></td>' +
+        '<td><a href="#" onclick="window.open(encodeURI(\'http://gallery.mapresso.com#phonegap=external\'), \'_system\')">' +
+        'http://gallery.mapresso.com</a></td></tr>' + 
+
+        '<tr><td align="right">Facebook:</td>' +
+        '<td align="center" width=31><a href="#" onclick="window.open(encodeURI(\'http://facebook.com/GallerySol#phonegap=external\'), \'_system\')">' +
+        '<img src="resources/data/img/FB_logo_blue_29.png" width="29" "height="29" align="middle"></a></td>' +
+        '<td><a href="#" onclick="window.open(encodeURI(\'http://facebook.com/GallerySol#phonegap=external\'), \'_system\')">' +
+        'http://facebook.com/GallerySol</a></td></tr>' + 
+
+        '<tr><td align="right">Twitter:</td>' +
+        '<td align="center" width=31><a href="#" onclick="window.open(encodeURI(\'http://twitter.com/gallerysol1#phonegap=external\'), \'_system\')">' +
+        '<img src="resources/data/img/Twitter_logo_blue_32.png" width="29" "height="29" align="middle"></a></td>' +
+        '<td><a href="#" onclick="window.open(encodeURI(\'http://twitter.com/gallerysol1#phonegap=external\'), \'_system\')">' +
+        'http://twitter.com/gallerysol1</a></td></tr>' + 
+        '</table>'
       },
     /* {
         xtype: 'sliderfield',

@@ -57,7 +57,7 @@ function queryDumpSuccess(tx, results) {
             for (key in obj) {
                 csvData += key + ",";
             }
-            csvData += "\n";
+            csvData += "$\n";
         }
         for (key in obj) {
             csvData += obj[key] + ",";

@@ -162,19 +162,19 @@ Ext.define('GallerySolitaire.view.Main', {
         html: '<div class="rules"><center><h1>Gallery Solitaire</h1>Version 2.4, &copy; 2015, Adrian Herzog<br/><br/>' +
         '<table border=0>' + 
 
-        '<tr><td align="right">Website:</td>' +
+        '<tr>' +
         '<td align="center" width=31><a href="#" onclick="window.open(encodeURI(\'http://gallery.mapresso.com#phonegap=external\'), \'_system\')">' +
         '<img src="resources/data/img/appicon-Small.png" width="29" "height="29" align="middle"></a></td>' +
         '<td><a href="#" onclick="window.open(encodeURI(\'http://gallery.mapresso.com#phonegap=external\'), \'_system\')">' +
         'http://gallery.mapresso.com</a></td></tr>' + 
 
-        '<tr><td align="right">Facebook:</td>' +
+        '<tr>' +
         '<td align="center" width=31><a href="#" onclick="window.open(encodeURI(\'http://facebook.com/GallerySol#phonegap=external\'), \'_system\')">' +
         '<img src="resources/data/img/FB_logo_blue_29.png" width="29" "height="29" align="middle"></a></td>' +
         '<td><a href="#" onclick="window.open(encodeURI(\'http://facebook.com/GallerySol#phonegap=external\'), \'_system\')">' +
         'http://facebook.com/GallerySol</a></td></tr>' + 
 
-        '<tr><td align="right">Twitter:</td>' +
+        '<tr>' +
         '<td align="center" width=31><a href="#" onclick="window.open(encodeURI(\'http://twitter.com/gallerysol1#phonegap=external\'), \'_system\')">' +
         '<img src="resources/data/img/Twitter_logo_blue_32.png" width="29" "height="29" align="middle"></a></td>' +
         '<td><a href="#" onclick="window.open(encodeURI(\'http://twitter.com/gallerysol1#phonegap=external\'), \'_system\')">' +

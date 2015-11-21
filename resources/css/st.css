@@ -8,6 +8,11 @@ html, body {
     cursor: default
 }
 
+.x-scroll-indicator.rounded > :nth-child(2) {
+    background: #333;
+    content: '';
+}
+
  /* line 260, /Users/jamieavins/git/SDK/touch/resources/themes/stylesheets/sencha-touch/base/mixins/_Class.scss */
 .x-button-icon.chart3:before,.x-button .x-button-icon.chart3:before {
     position:absolute;

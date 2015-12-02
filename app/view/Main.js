@@ -40,7 +40,7 @@ Ext.define('GallerySolitaire.view.Main', {
     items: [{
       xtype: 'panel',
       title: 'Gallery Solitaire',
-      style: {"background-color": "rgb(230,230,230)"},
+      style: {"background-color": "rgb(255,255,255)", "width": "100%", "text-align": "center"},
     //  style:{"background":"url(resources/startup/1496x204.png) no-repeat !important;"},
    //     iconCls: 'docs_black2',
    //     iconCls: 'icomoon-stats',

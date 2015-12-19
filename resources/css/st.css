@@ -1,5 +1,9 @@
 @charset "UTF-8"
 
+#sketch {
+   width: 100%;
+   text-align:center;
+}
 html, body {
     font-family: "-apple-system" !important;
     font-weight: normal;

@@ -43,7 +43,6 @@ class Button {
     if (!active) {
       fill(color(255));
       stroke(color(255));
-      stroke(color(255));
       rect(x - 2, y - 2, dx + 4, dy + 8);
       return;
     };

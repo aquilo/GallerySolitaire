@@ -39,8 +39,10 @@ function percent(ip, itot, dec) {
 // --------------------------------------------------
 
 function getAllStats() {
-    getDb().transaction(function (tx) {
-        tx.executeSql('SELECT sum(case when player < mean then 1 else 0 end) as hwins, sum(case when player = 0 or minimum = 0 then 1 else 0 end) as hsolvable, sum(case when player < minimum then 1 else 0 end) as hminwins, sum(case when player = mean then 1 else 0 end) as hdrawn, sum(case when player = 0 then 1 else 0 end) as hzeros, sum(case when player > minimum then 1 else 0 end) as hcbetter, avg(player) as player, avg(mean) as mean, count(*) as n, sum(nauto) as nauto, sum(nmoves) as nmoves, avg(less) as less, avg(equal) as equal, avg(more) as more, avg(result) as result, sum(case when player <= minimum then 1 else 0 end) as nobetter FROM STAT', [], queryAllSuccess, errorCB);
+    var sel = 'SELECT sum(case when player < mean then 1 else 0 end) as hwins, sum(case when player = 0 or minimum = 0 then 1 else 0 end) as hsolvable, sum(case when player < minimum then 1 else 0 end) as hminwins, sum(case when player = mean then 1 else 0 end) as hdrawn, sum(case when player = 0 then 1 else 0 end) as hzeros, sum(case when player > minimum then 1 else 0 end) as hcbetter, avg(player) as player, avg(mean) as mean, count(*) as n, sum(nauto) as nauto, sum(nmoves) as nmoves, avg(less) as less, avg(equal) as equal, avg(more) as more, avg(result) as result, sum(case when player <= minimum then 1 else 0 end) as nobetter ';
+    var query = sel + 'FROM STAT UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(20)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(50)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(100)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(200)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(500)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(1000)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(2000)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(5000))';
+    getDb().transaction(function(tx) {
+        tx.executeSql(query, [], queryAllSuccess, errorCB);
     }, errorCB);
 }
 
@@ -66,92 +68,140 @@ function queryDumpSuccess(tx, results) {
         csvData += "$\n";
     }
     global_csv = csvData;
-/*        to:      ['max.mustermann@appplant.de'],
-        cc:      ['erika.mustermann@appplant.de'],
-        bcc:     ['john.doe@appplant.com', 'jane.doe@appplant.com'],
-        subject: 'Greetings',
-        body:    'How are you? Nice greetings from Leipzig'
+    /*        to:      ['max.mustermann@appplant.de'],
+            cc:      ['erika.mustermann@appplant.de'],
+            bcc:     ['john.doe@appplant.com', 'jane.doe@appplant.com'],
+            subject: 'Greetings',
+            body:    'How are you? Nice greetings from Leipzig'
+        });
+
+    */
+    // var emailComposer = cordova.require('emailcomposer.EmailComposer')
+
+    /* alternatively exists in global scope as EmailComposer if you embed via a script tag */
+
+    /* emailComposer.show({ 
+      to: 'to@example.com',
+      cc: 'cc@example.com',
+      bcc: 'bcc@example.com',
+      subject: 'Example email message',
+      body: '<h1>Hello, world!</h1>',
+      isHtml: true,
+      attachments: [
+       // attach a HTML file using a UTF-8 encoded string
+       {
+         mimeType: 'text/html',
+         encoding: 'UTF-8',
+         data: '<html><body><h1>Hello, World!</h1></body></html>',
+         name: 'demo.html'
+       },
+       // attach a base-64 encoded veresion of of http://cordova.apache.org/favicon.ico
+       {
+          mimeType: 'text/png',
+          encoding: 'Base64',
+          data: 'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB1WlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS4xLjIiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyI+CiAgICAgICAgIDx0aWZmOkNvbXByZXNzaW9uPjE8L3RpZmY6Q29tcHJlc3Npb24+CiAgICAgICAgIDx0aWZmOlBob3RvbWV0cmljSW50ZXJwcmV0YXRpb24+MjwvdGlmZjpQaG90b21ldHJpY0ludGVycHJldGF0aW9uPgogICAgICAgICA8dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4K5JKPKQAAAtpJREFUOBFNU0toE1EUPTOZTJI2qbG0qUnwg1IFtSBI967cCBHcSsGFgktdC125EvwVLKi0FApaCChuRMSFqAitCNrGJE1DadpSYz5OvpPJ5Od5007xwc1998475513743U6/Uk7K1Op6O0Wq2pdrvt597odrugh/A0hcdk+luhUKhgY0Ryf5HsmizLNz0eN9qtNvRGA8xBdTohyxJjQ8TrBEzaIOk/BQNk3+YHL1WAKiyguL1Wr1tK3C6XteeZ01SRFCSy+Nlb07zdG0umcPvOXTyde8lbZbjcbjyYnsG5CxG8fvsBBJKs+8wG2QouMvFOJB9Mz+JnLA6P24UBnxcNo4nk2jpiiVWEQ2G8j87ApSqo643rgUBg1lJgGMaUAK/EkyhVaxg7eQLhoUEoThX9JBk54MVh/wDSm1uYj75Bv9eHRqNxL5PJTFpF1DRN8fX3oVKp4GhwGB6/H50eoO3sIBgYRpdvr/v8cCeS8KgOFHNZZLNZlfVTLQWKoixDkuElyeLXJdT7vGiHw/j+7QdezC9gCw6MX76Ezx+/QJYkVKiShU6y0MuWAjKlzJYJp+JAIZdDJl+AT3ZgM7OJYqGA4Jkx/C5X4XEpvMSDaq0K0zRTAmcRkCnZZutEm4p6A3MPn8Ahel/SoJstbEVf4dNCFIPBQ/ByRqpU0Gw2UyzbhkVAOSkywuGQMT5+HgOsuEtRIJ06jl63B4nqmuzGwZEAnE7FIhCYSCRSsggIXmcnxLtw4+oViNluc4Q7HCbbi4ES34tayRoyHknTdgdpdHQ0S4KcUJBKrdXuP3q8XGZH/uTzyOXyKJXLeD4zF1uJr2ZFnfh26Lq+sU8gSZJaLpfTBmWyQLWlxaWczlpoWskk2GzyefH4r7+JRGKHZ4WS9MTEREUQWJPIpJv7Y7SztCM0EYvV3XX7I28w3qbFaBtUotsEKhN+2hCtjybmwwZzay07pzMSf+cSCcx/K8WXLZEV/swAAAAASUVORK5CYII=',
+          name: 'cordova.png'
+        }
+        // attach a file using a hypothetical file path
+        //,{ filePath: './path/to/your-file.jpg' }
+      ],
+      onSuccess: function (winParam) { 
+        console.log('EmailComposer onSuccess - return code ' + winParam.toString());
+      },
+      onError: function (error) {
+        console.log('EmailComposer onError - ' + error.toString());
+      }
     });
 
-*/
-   // var emailComposer = cordova.require('emailcomposer.EmailComposer')
+    */
 
-/* alternatively exists in global scope as EmailComposer if you embed via a script tag */
+    //   EmailComposer.prototype.showEmailComposer("GallerySolitaire Data, " + new Date(),
+    //     global_csv, "", "", "", true);
 
-/* emailComposer.show({ 
-  to: 'to@example.com',
-  cc: 'cc@example.com',
-  bcc: 'bcc@example.com',
-  subject: 'Example email message',
-  body: '<h1>Hello, world!</h1>',
-  isHtml: true,
-  attachments: [
-   // attach a HTML file using a UTF-8 encoded string
-   {
-     mimeType: 'text/html',
-     encoding: 'UTF-8',
-     data: '<html><body><h1>Hello, World!</h1></body></html>',
-     name: 'demo.html'
-   },
-   // attach a base-64 encoded veresion of of http://cordova.apache.org/favicon.ico
-   {
-      mimeType: 'text/png',
-      encoding: 'Base64',
-      data: 'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB1WlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS4xLjIiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyI+CiAgICAgICAgIDx0aWZmOkNvbXByZXNzaW9uPjE8L3RpZmY6Q29tcHJlc3Npb24+CiAgICAgICAgIDx0aWZmOlBob3RvbWV0cmljSW50ZXJwcmV0YXRpb24+MjwvdGlmZjpQaG90b21ldHJpY0ludGVycHJldGF0aW9uPgogICAgICAgICA8dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4K5JKPKQAAAtpJREFUOBFNU0toE1EUPTOZTJI2qbG0qUnwg1IFtSBI967cCBHcSsGFgktdC125EvwVLKi0FApaCChuRMSFqAitCNrGJE1DadpSYz5OvpPJ5Od5007xwc1998475513743U6/Uk7K1Op6O0Wq2pdrvt597odrugh/A0hcdk+luhUKhgY0Ryf5HsmizLNz0eN9qtNvRGA8xBdTohyxJjQ8TrBEzaIOk/BQNk3+YHL1WAKiyguL1Wr1tK3C6XteeZ01SRFCSy+Nlb07zdG0umcPvOXTyde8lbZbjcbjyYnsG5CxG8fvsBBJKs+8wG2QouMvFOJB9Mz+JnLA6P24UBnxcNo4nk2jpiiVWEQ2G8j87ApSqo643rgUBg1lJgGMaUAK/EkyhVaxg7eQLhoUEoThX9JBk54MVh/wDSm1uYj75Bv9eHRqNxL5PJTFpF1DRN8fX3oVKp4GhwGB6/H50eoO3sIBgYRpdvr/v8cCeS8KgOFHNZZLNZlfVTLQWKoixDkuElyeLXJdT7vGiHw/j+7QdezC9gCw6MX76Ezx+/QJYkVKiShU6y0MuWAjKlzJYJp+JAIZdDJl+AT3ZgM7OJYqGA4Jkx/C5X4XEpvMSDaq0K0zRTAmcRkCnZZutEm4p6A3MPn8Ahel/SoJstbEVf4dNCFIPBQ/ByRqpU0Gw2UyzbhkVAOSkywuGQMT5+HgOsuEtRIJ06jl63B4nqmuzGwZEAnE7FIhCYSCRSsggIXmcnxLtw4+oViNluc4Q7HCbbi4ES34tayRoyHknTdgdpdHQ0S4KcUJBKrdXuP3q8XGZH/uTzyOXyKJXLeD4zF1uJr2ZFnfh26Lq+sU8gSZJaLpfTBmWyQLWlxaWczlpoWskk2GzyefH4r7+JRGKHZ4WS9MTEREUQWJPIpJv7Y7SztCM0EYvV3XX7I28w3qbFaBtUotsEKhN+2hCtjybmwwZzay07pzMSf+cSCcx/K8WXLZEV/swAAAAASUVORK5CYII=',
-      name: 'cordova.png'
-    }
-    // attach a file using a hypothetical file path
-    //,{ filePath: './path/to/your-file.jpg' }
-  ],
-  onSuccess: function (winParam) { 
-    console.log('EmailComposer onSuccess - return code ' + winParam.toString());
-  },
-  onError: function (error) {
-    console.log('EmailComposer onError - ' + error.toString());
-  }
-});
+    //   EmailComposer.prototype.showEmailComposer("GallerySolitaire Data, " + new Date(),
+    //     global_csv, "", "", "", true);
+    cordova.plugins.email.open({
 
-*/
-
- //   EmailComposer.prototype.showEmailComposer("GallerySolitaire Data, " + new Date(),
-   //     global_csv, "", "", "", true);
-
- //   EmailComposer.prototype.showEmailComposer("GallerySolitaire Data, " + new Date(),
-   //     global_csv, "", "", "", true);
-cordova.plugins.email.open({
-
-    subject: 'GallerySolitaire Data, ' + new Date(),
-    body:    global_csv,
-    isHtml:  true
+        subject: 'GallerySolitaire Data, ' + new Date(),
+        body: global_csv,
+        isHtml: true
 
 
-})
+    })
 }
 
 function doDumpDb(tx) {
-    getDb().transaction(function (tx) {
+    getDb().transaction(function(tx) {
         tx.executeSql('SELECT * FROM STAT', [], queryDumpSuccess, errorCB);
     }, errorCB);
 }
 
 function queryAllSuccess(tx, results) {
-    var r = results.rows.item(0);
+    var len = results.rows.length;
+    var r = results.rows.item(len - 1);
+    var s;
     global_statistics = r;
+    var nn = r.n;
+    var rrr = '<table border="1px" style="font-size: 10px">';
     //   console.log(JSON.stringify(r));
-    statText = [
-    /*    '<table border="1px">',
-     
-     '<tr><th>&nbsp;</th><th>You</th>',
-     '<th>typical</th><th>Computer</th></tr>',
-     
-     '<tr><td>Mean:</td><td>' + round_number(r.player, 2) + '</td>',
-     '<td>22.4</td><td>' + round_number(r.mean, 2) + '</td></tr>',
-     
-     '<tr><td>Games:</td><td>' + r.n + '</td>',
-     '<td>-</td><td>-</td></tr>',
-     
-     '</table>', */
+    aaa = results;
+    console.log(results.rows);
+    var k = 0;
+    do {
+        k = k + 1;
+    } while (results.rows.item(k).n !== nn);
+    len = k;
 
+    rrr += '<tr><th># of games (last &#8230;)</th>';
+    for (var i = 0; i < len; i++) {
+        rrr += '<td>' + results.rows.item(i).n + '</td>';
+    }
+    rrr += '<th>good:</th></tr>';
+
+    rrr += '<tr><th>mean score</th>';
+    for (var i = 0; i < len; i++) {
+        rrr += '<td>' + round_number(results.rows.item(i).mean, 2) + '</td>';
+    }
+    rrr += '<th>21.66</th></tr>';
+
+    rrr += '<tr><th>% games with score 0</th>';
+    for (var i = 0; i < len; i++) {
+        s = results.rows.item(i);
+        rrr += '<td>' + percent(s.hzeros, s.n, 2) + '</td>';
+    }
+    rrr += '<th>13.8</th></tr>';
+
+    rrr += '<tr><th>% solved of solvable</th>';
+    for (var i = 0; i < len; i++) {
+        s = results.rows.item(i);
+        rrr += '<td>' + percent(s.hzeros, s.hsolvable, 2) + '</td>';
+    }
+    rrr += '<th>45.2</th></tr>';
+
+    rrr += '<tr><th>% best result</th>';
+    for (var i = 0; i < len; i++) {
+        s = results.rows.item(i);
+        rrr += '<td>' + percent(s.n - s.hcbetter, s.n, 2) + '</td>';
+    }
+    rrr += '<th>23.3</th></tr>';
+
+    rrr += '<tr><th>% mean result</th>';
+    for (var i = 0; i < len; i++) {
+        s = results.rows.item(i);
+        rrr += '<td>' + round_number(s.result, 2) + '</td>';
+    }
+    rrr += '<th>77.9</th></tr>';
+
+    rrr += '<tr><th>% better than c\'s mean</th>';
+    for (var i = 0; i < len; i++) {
+        s = results.rows.item(i);
+        rrr += '<td>' + percent(s.hwins, s.n, 2) + '</td>';
+    }
+    rrr += '<th>85.0</th></tr>';
+
+
+    rrr += '</table>';
+    statText = [
         '<h2>Your Results</h2>',
         '<div class="rules">For comparison: <i>empirical results</i>.<br><br>',
 
@@ -171,9 +221,7 @@ function queryAllSuccess(tx, results) {
         'you achieved the best possible result.</p>',
 
         '<strong>Mean result</strong>: <b>' + round_number(r.result, 2) + '%</b> (<i>77.0%</i>)<br/>',
-        'The result of a single game is the percentage of computer\'s scores worse than your\'s (mean: <strong>'
-            + round_number(r.more, 2) + '</strong>) plus half of the drawn attempts (mean: <strong>'
-            + round_number(r.equal, 2) + ' / 2</strong>). You see this number after a evaluation in the center of ',
+        'The result of a single game is the percentage of computer\'s scores worse than your\'s (mean: <strong>' + round_number(r.more, 2) + '</strong>) plus half of the drawn attempts (mean: <strong>' + round_number(r.equal, 2) + ' / 2</strong>). You see this number after a evaluation in the center of ',
         'the horizontal coloured bar.</p>',
 
         '<p><strong>Games won</strong>: <b>' + percent(r.hwins, r.n, 2) + '%</b> (<i>84.7%</i>)',
@@ -187,6 +235,8 @@ function queryAllSuccess(tx, results) {
         'Auto moves: <b>' + percent(r.nauto, r.nmoves, 1) + ' %</b>. <br>Usual duration of a game: ',
         "<i>2'" + '11"</i> (includes evaluation).',
 
+        '<br/></br>',
+        rrr,
         '<br/></br></div>'
 
     ].join('');
@@ -265,7 +315,7 @@ function querySuccess(tx, results) {
 
 
 function setStepsPref() {
-//  console.log('steps: ' + global_steps);
+    //  console.log('steps: ' + global_steps);
     window.localStorage.setItem('steps', global_steps);
 }
 
@@ -285,18 +335,18 @@ function get1Pref(prefName, defaultValue) {
             }
         }
     }
-//  console.log(prefName + " " + pref + " " + typeof pref);
-//  console.log("get " + prefName + " " + pref + " " + typeof pref);
+    //  console.log(prefName + " " + pref + " " + typeof pref);
+    //  console.log("get " + prefName + " " + pref + " " + typeof pref);
     return pref;
 }
 
 function set1Pref(prefName, pref) {
-//  console.log("save " + prefName + " " + pref + " " + typeof pref);
+    //  console.log("save " + prefName + " " + pref + " " + typeof pref);
     window.localStorage.setItem(prefName, pref);
 }
 
 function getAllPrefs() {
-//  console.log("getAllPrefs");
+    //  console.log("getAllPrefs");
     global_helplevel = get1Pref("helplevel", 0);
     global_steps = get1Pref("steps", 30);
     global_mtime = get1Pref("speed", 250);
@@ -305,7 +355,7 @@ function getAllPrefs() {
 }
 
 function setAllPrefs() {
-//  console.log("setAllPrefs");
+    //  console.log("setAllPrefs");
     set1Pref("helplevel", global_helplevel);
     set1Pref("steps", global_steps);
     set1Pref("speed", global_mtime);

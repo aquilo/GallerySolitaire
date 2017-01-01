@@ -63,6 +63,41 @@ class Statistics {
     draw1Result(resultat, res);
   }
 
+  void drawEvaluationLegend(int myres, int iy) {
+    color c;
+    boolean all;
+    inx jx, dx, dy, drawNext;
+    int n = 0;
+    dy = ifact * 9;
+    for (int i = 0; i < 97; i++) {
+      n += histo[i];
+    }
+    all = n < 100;
+    for (int i = 0; i < 97; i++) {
+      if (i != 1) {
+        noStroke();
+        if (all || histo[i] > 0) {
+          c = getResColor(i, myres);
+        } else {
+          c = color(220);
+        }
+        fill(c);
+        int ix = min(i, 95) * ifact * 10 / 3;
+        if (i == 0) {
+          dx = ifact * 13 / 3;
+        } else {
+          dx = ifact * 10 / 3;
+        }
+        rect(ix, iy, dx, dy);
+        stroke(0);
+        line(ix, iy, ix, iy + dy - ifact);
+        if (i == 0) {
+          line(dx, iy, dx, iy + dy - ifact);
+        }
+      }
+    }
+  }
+
   void draw1Result(int now, int myres) {
     /*
     x1res += dx1res;
@@ -108,12 +143,12 @@ class Statistics {
     if (now == myres) {
       if (now == 0) {
 //        return color(255, 255, 50);
-        return color(255, 255, 150);
+        return color(255, 255, 100);
       } else {
         return color(255);
       }
     } else if (now == 0) {
-      return color(0, 255, 0); //TODO: color
+      return color(255, 127, 255); //TODO: color
  //     return color(255, 100, 220); //TODO: color
     }
 

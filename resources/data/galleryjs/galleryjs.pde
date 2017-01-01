@@ -222,8 +222,8 @@ void setup() {
 //  btnEvaluate = new Button(getTranslation(LANG, "Evaluate"), XRES - ifact * 135, YRES - ifact * 15, WBF, HBF, 1);
   btnEvaluate = new Button(getTranslation(LANG, "Evaluate"), XRES - ifact * 105, YRES - ifact * 15, WBF, HBF, 1);
 
-  btnNew = new Button(getTranslation(LANG, "New"), XBN - ifact * 50, YBN, WBN, HBN, 1);
-  btnUndo = new Button(getTranslation(LANG, "Undo"), XBU - ifact * 50, YBU - ifact * 2, WBU, HBU, 1);
+  btnNew = new Button(getTranslation(LANG, "New"), XBN - ifact * 50, YBN + 25, WBN, HBN, 1);
+  btnUndo = new Button(getTranslation(LANG, "Undo"), XBU - ifact * 50, YBU - ifact * 6, WBU, HBU, 1);
   // btnAuto = new Button(getTranslation(LANG, "Auto"), XBN + ifact * 15, YBU - ifact * 2, WBN, HBN, 1);
   btnAuto = new Button(getTranslation(LANG, "Auto\nplay"), XBN + ifact * 65, YBN, WBN, HBN, 1);
   btnRedo = new Button(getTranslation(LANG, "Redo"), XBN + ifact * 15, YBN, WBN, HBN, 1);
@@ -283,12 +283,26 @@ void doStatisticsGraphInit() {
   statistics.statisticsgraphinit();
 }
 
+void drawE() {
+  btnUndo.draw(false);
+  fill(255);
+  rect(XRES - 20, YRES - 20, 40, 40)
+  statistics.drawEvaluationLegend(resPlayer, YRES - ifact * 30);
+  println(resPlayer);
+  textFont(myFont, F14);
+  fill(color(0));
+  stroke(color(0));
+  jx = max(min(resPlayer, 93), 2);
+  jx = 3 + jx * ifact * 10 / 3;
+  textC(resPlayer + "", jx, YRES - ifact * 10);
+}
+
 void doEvaluation(int n, float alfa) {
   humanPlayer = false;
   debug = false;
   evaluating = true;
   stroke(0);
-  btnUndo.draw(false);
+//  btnUndo.draw(false);
   //  int start = millis();
   for (int i = 0; i < n; i++) {
     btnNew.draw(false);
@@ -524,6 +538,7 @@ void allJamChecks() {
 }
 
 void drawProgress(int part, int all) {
+  if (part < 10) drawE();
   if (part < 0) {
     //println(statistics.mean + " " + resPlayer);
     noStroke();
@@ -532,9 +547,11 @@ void drawProgress(int part, int all) {
     fill(0);
     textFont(myFont, F12);
     textC("Tap to continue.", width / 2, YRES - ifact * 46);
-    fill(255);
+    fill(255, 200, 12);
     noStroke();
-    rect(0, YPROGRESS + DYPROGRESS + 3, width, 0.6 * DYPROGRESS);
+ //   rect(0, YPROGRESS + DYPROGRESS + 3, width, 0.6 * DYPROGRESS);
+    statistics.setResPlayer(resPlayer);
+
   } else {
     float p = float(part) / float(all);
     if (p < drawNext) return;
@@ -625,9 +642,15 @@ void allDraw() {
   if (humanPlayer) {
     textFont(myFont, F18); 
     if (gameFinished) {
-      textFont(myFont, F24);
+    //  drawE();
+      // textFont(myFont, F24);
+      // statistics.drawEvaluationLegend(res, YRES - ifact * 30);
+     // textC(res + "", res * ifact * 10 / 3, YRES);
     }
     textC(res + "", XRES, YRES);
+    
+  //  drawE();
+ //    textC(res + "", res * ifact * 10 / 3, YRES);
     textFont(myFont, F12);
     if (res == 0) {
       // textC(getTranslation(LANG, "You win!"), XRES/2, YRES);

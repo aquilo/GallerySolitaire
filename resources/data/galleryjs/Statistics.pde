@@ -45,6 +45,10 @@ class Statistics {
       boxx[i] = x1res;
       boxy[i] = y1res;
     }
+    randomizeEvaluation();
+  }
+
+  void randomizeEvaluation() {
     for (int i = global_evaluations - 1; i >= 0; i--) {
       int j = int(random(i));
       int k = boxx[j];
@@ -54,13 +58,46 @@ class Statistics {
       boxy[j] = boxy[i];
       boxy[i] = k;
     }
-  
-
   }
 
   void add(int resultat) {
     histo[resultat]++;
     draw1Result(resultat, res);
+  }
+
+  void drawEvaluationLegendOne(int i, int myres, int iy, boolean evnot) {
+    if (i != 1) {
+      if (histo[i] > 0) {
+        if (evnot && histo[i] > 1) {
+          return;
+        }
+        c = getResColor(i, myres);
+      } else {
+        if (evnot) {
+          return;
+        }
+        c = color(220);
+      }
+      noStroke();
+      dy = ifact * 9;
+      fill(c);
+      int ix = min(i, 95) * ifact * 10 / 3;
+      if (i == 0) {
+        dx = ifact * 13 / 3;
+      } else {
+        dx = ifact * 10 / 3;
+      }
+      rect(ix, iy, dx, dy);
+      stroke(0);
+      line(ix, iy, ix, iy + dy - ifact);
+      if (i == 0) {
+        line(dx, iy, dx, iy + dy - ifact);
+      }
+      if (evnot) {
+        ix = ix + dx;
+        line(ix, iy, ix, iy + dy - ifact);
+      }
+    }
   }
 
   void drawEvaluationLegend(int myres, int iy) {
@@ -73,28 +110,10 @@ class Statistics {
       n += histo[i];
     }
     all = n < 100;
+
+    all = false;
     for (int i = 0; i < 97; i++) {
-      if (i != 1) {
-        noStroke();
-        if (all || histo[i] > 0) {
-          c = getResColor(i, myres);
-        } else {
-          c = color(220);
-        }
-        fill(c);
-        int ix = min(i, 95) * ifact * 10 / 3;
-        if (i == 0) {
-          dx = ifact * 13 / 3;
-        } else {
-          dx = ifact * 10 / 3;
-        }
-        rect(ix, iy, dx, dy);
-        stroke(0);
-        line(ix, iy, ix, iy + dy - ifact);
-        if (i == 0) {
-          line(dx, iy, dx, iy + dy - ifact);
-        }
-      }
+      drawEvaluationLegendOne(i, myres, iy, false);
     }
   }
 
@@ -117,6 +136,8 @@ class Statistics {
     rect(x1res, y1res, dx1res, dy1res);
     nrbox++;
 
+    drawEvaluationLegendOne(now, myres, YRES - ifact * 30, true);
+
     //IDEA plot of a small fingerprint of this game
     
 /*
@@ -138,17 +159,17 @@ class Statistics {
      
   }
 
-
   color getResColor(float now, int myres) {
     if (now == myres) {
       if (now == 0) {
 //        return color(255, 255, 50);
-        return color(255, 255, 100);
+        return color(200);
       } else {
         return color(255);
       }
     } else if (now == 0) {
-      return color(255, 127, 255); //TODO: color
+      return color(175, 0, 0); //TODO: color
+ //     return color(255, 127, 255); //TODO: color
  //     return color(255, 100, 220); //TODO: color
     }
 
@@ -350,6 +371,16 @@ void drawHisto(int x0, int y0) {
           stroke(102, 189, 99);
         }
       }
+      if (i == resPlayer) {
+        c = color(120);
+      } else {
+       c = statistics.getResColor(float(i), resPlayer);
+       if (i % 5) {
+        c = darker(c, 0.9);
+       }
+      }
+
+      stroke(c);
       int xnow = xx + i * ifact * 2;
       int ynow = ybasis
         - ifact * Math.max((int) (statistics.histo[i] / fhisto), 1);
@@ -393,6 +424,13 @@ void drawHisto(int x0, int y0) {
   strokeWeight(1);
 }
 
+color darker(color c, float f) {
+  int r = red(c) * f;
+  int g = green(c) * f;
+  int b = blue(c) * f;
+  return color(r, g, b);
+}
+
 void drawResult(int x, int y) {
   if (statistics.maximum < 0) return;
   int dx = ifact * 200;
@@ -400,19 +438,20 @@ void drawResult(int x, int y) {
   int yc = y + dy / 2;
   stroke(0);
   if (colorblind) {
-    fill(140, 199, 255);
-  } else {
+   // fill(140, 199, 255);
+    fill(statistics.getResColor(30.0, 20));
+  
+} else {
     fill(140, 255, 115);
   }
   rect(x, y, dx, dy);
   noStroke();
-
   fill(127);
   rect(x, y, 2 * (statistics.less + statistics.equal), dy);
 
-  fill(255, 128, 128);
+//  fill(255, 128, 128);
+  fill(statistics.getResColor(30.0, 40));
   rect(x, y, statistics.less * 2, dy);
-
   stroke(0);
   fill(0);
   textAlign(LEFT, CENTER);

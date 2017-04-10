@@ -21,7 +21,7 @@ boolean isProcessing = false;
 
 // --------------------------------------------------------------
 // top left of Foundation, Tableau, Aces, Stock
-String version = "Version 2.4"; // a
+String version = "Version 2.5"; // a
 String device = "";
 String mymsg;
 int XSF, YSF, XST, YST, XSA, YSA, XSS, YSS; 
@@ -176,12 +176,14 @@ void setup() {
   if (isProcessing) {
     myFont = loadFont("SansSerif-12.vlw");
   } else {
-    myFont = loadFont(dataPath + "helveticaneue.ttf");
+  //  myFont = loadFont(dataPath + "helveticaneue.ttf");
   }
 
-  myFont = createFont("SFUIDisplay-Light", 24, true);
+  // myFont = createFont("SFUIText", 24, true);
   myFont2 = createFont("SFUIDisplay-Medium", 24, true);
-  textFont(myFont, F12);  
+//   myFont = createFont("SFUIDisplay-Light", 24, true);
+   myFont = createFont("SFUIDisplay", 24, true);
+//  textFont(myFont, F12);  
 
   textFont(myFont, F12);  
 
@@ -220,13 +222,15 @@ void setup() {
       new TableauPile(XST + DXSF * i, YST, j - 1, 10);
 
 //  btnEvaluate = new Button(getTranslation(LANG, "Evaluate"), XRES - ifact * 135, YRES - ifact * 15, WBF, HBF, 1);
-  btnEvaluate = new Button(getTranslation(LANG, "Evaluate"), XRES - ifact * 105, YRES - ifact * 15, WBF, HBF, 1);
+//  btnEvaluate = new Button(getTranslation(LANG, "Evaluate"), XRES - ifact * 105, YRES - ifact * 15, WBF, HBF, 1);
+    btnEvaluate = new Button(getTranslation(LANG, "Evaluate"), XRES - ifact * 105, YRES-  ifact * 10, WBF, HBF, 1);
 
-  btnNew = new Button(getTranslation(LANG, "New"), XBN - ifact * 50, YBN + 25, WBN, HBN, 1);
+  btnNew = new Button(getTranslation(LANG, "New"), XBN - ifact * 60, YBN + 25, WBN, HBN, 1);
   btnUndo = new Button(getTranslation(LANG, "Undo"), XBU - ifact * 50, YBU - ifact * 6, WBU, HBU, 1);
   // btnAuto = new Button(getTranslation(LANG, "Auto"), XBN + ifact * 15, YBU - ifact * 2, WBN, HBN, 1);
-  btnAuto = new Button(getTranslation(LANG, "Auto\nplay"), XBN + ifact * 65, YBN, WBN, HBN, 1);
-  btnRedo = new Button(getTranslation(LANG, "Redo"), XBN + ifact * 15, YBN, WBN, HBN, 1);
+  btnAuto = new Button(getTranslation(LANG, "Auto\nplay"), XBN + ifact * 100, YBN + 25, WBN, HBN, 1);
+//  btnRedo = new Button(getTranslation(LANG, "Redo"), XBN + ifact * 15, YBN, WBN, HBN, 1);
+  btnRedo = new Button(getTranslation(LANG, "Redo"), XBN + ifact * 20, YBN + 25, WBN, HBN, 1);
   for (int i = 2; i < 34; i++) {
     serie[i - 2] = i;
     serie32[i - 2] = i;
@@ -288,7 +292,6 @@ void drawE() {
   fill(255);
   rect(XRES - 20, YRES - 20, 40, 40)
   statistics.drawEvaluationLegend(resPlayer, YRES - ifact * 30);
-  println(resPlayer);
   textFont(myFont, F14);
   fill(color(0));
   stroke(color(0));
@@ -593,7 +596,7 @@ void allDraw() {
     image(offScreen, 0, 0);
   } else {
     fill(255);
-    rect(0, ifact * 330, width, height);
+    rect(0, ifact * 350, width, height);
   }
 
   if (global_helplevel == 9 || global_helplevel == 10) {
@@ -602,6 +605,7 @@ void allDraw() {
     }
   }
 
+  if (humanPlayer)
   btnUndo.draw(moveStack.nMoves > 0 && res != 0);
   btnAuto.draw3(true, !noHelp);
 

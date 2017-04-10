@@ -208,23 +208,23 @@ function queryAllSuccess(tx, results) {
         '<h3>Basic Indicators</h3>',
         '<strong>Number of games</strong>: <b>' + round_number(r.n, 2) + '</b>',
         '<br/>Mean score: <b>' + round_number(r.player, 2) + '</b>',
-        '&nbsp;&nbsp;(<i>22.0</i>; computer: ' + round_number(r.mean, 2) + ')</br></br>',
+        '&nbsp;&nbsp;(<i>21.6</i>; computer: ' + round_number(r.mean, 2) + ')</br></br>',
 
         '<h3>Winning Situations</h3>',
-        '<strong>Games with score 0</strong>: <b>' + percent(r.hzeros, r.n, 2) + '%</b> (<i>13.8%</i>)',
+        '<strong>Games with score 0</strong>: <b>' + percent(r.hzeros, r.n, 2) + '%</b> (<i>14.4%</i>)',
         ', but solvable were at least <strong>' + percent(r.hsolvable, r.n, 2) + '%</strong> (<i>31.7%</i>). <br>This means that you solved at most <b>' + percent(r.hzeros, r.hsolvable, 2) + '%</b> (<i>44.8%</i>) of all solvable games.</br></br>',
 
         '<h3>Comparisons</h3>',
         'Comparisons to the random tapping "strategy": ',
 
-        '</p><strong>Best Result</strong>: In only <b>' + percent(r.n - r.hcbetter, r.n, 2) + '%</b> (<i>22.2%</i>) ',
+        '</p><strong>Best Result</strong>: In only <b>' + percent(r.n - r.hcbetter, r.n, 2) + '%</b> (<i>23.6%</i>) ',
         'you achieved the best possible result.</p>',
 
-        '<strong>Mean result</strong>: <b>' + round_number(r.result, 2) + '%</b> (<i>77.0%</i>)<br/>',
+        '<strong>Mean result</strong>: <b>' + round_number(r.result, 2) + '%</b> (<i>78.1%</i>)<br/>',
         'The result of a single game is the percentage of computer\'s scores worse than your\'s (mean: <strong>' + round_number(r.more, 2) + '</strong>) plus half of the drawn attempts (mean: <strong>' + round_number(r.equal, 2) + ' / 2</strong>). You see this number after a evaluation in the center of ',
         'the horizontal coloured bar.</p>',
 
-        '<p><strong>Games won</strong>: <b>' + percent(r.hwins, r.n, 2) + '%</b> (<i>84.7%</i>)',
+        '<p><strong>Games won</strong>: <b>' + percent(r.hwins, r.n, 2) + '%</b> (<i>85.2%</i>)',
         '</br>Your score was better than computer\'s mean out of many attempts.</p>',
         '<p>Games better than computer\'s best: <strong>' + percent(r.hminwins, r.n, 2) + ' %</strong>.',
         '<br/>This depends on the number of attempts. With very many attempts the program ',

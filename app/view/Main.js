@@ -159,7 +159,7 @@ Ext.define('GallerySolitaire.view.Main', {
         xtype: 'label',
         //            styleHtmlCls: 'rules',
         styleHtmlContent: true,
-        html: '<div class="rules"><center><h1>Gallery Solitaire</h1>Version 2.4, &copy; 2015, Adrian Herzog<br/><br/>' +
+        html: '<div class="rules"><center><h1>Gallery Solitaire</h1>Version 2.5, &copy; 2017, Adrian Herzog<br/><br/>' +
         '<table border=0>' + 
 
         '<tr>' +

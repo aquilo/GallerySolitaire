@@ -157,6 +157,7 @@ void textR(String s, int x, int y) {
 void textC(String s, int x, int y) {
   os.mytextAlign2(CENTER, CENTER);
   os.mytext(s, x, y);
+//  println(s + " " +  x + " " + y);
   os.mytextAlign2(LEFT, BASELINE);
 }
 

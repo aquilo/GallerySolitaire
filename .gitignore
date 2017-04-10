@@ -50,6 +50,7 @@ Thumbs.db
 thumbs.db
 sencha/archive/
 sencha/build/
+.sencha_backup/
 sencha/resources/sass/.sass-cache/
 www/app.js
 www/index.html

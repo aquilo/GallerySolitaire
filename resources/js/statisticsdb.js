@@ -40,8 +40,9 @@ function percent(ip, itot, dec) {
 
 function getAllStats() {
     var sel = 'SELECT sum(case when player < mean then 1 else 0 end) as hwins, sum(case when player = 0 or minimum = 0 then 1 else 0 end) as hsolvable, sum(case when player < minimum then 1 else 0 end) as hminwins, sum(case when player = mean then 1 else 0 end) as hdrawn, sum(case when player = 0 then 1 else 0 end) as hzeros, sum(case when player > minimum then 1 else 0 end) as hcbetter, avg(player) as player, avg(mean) as mean, count(*) as n, sum(nauto) as nauto, sum(nmoves) as nmoves, avg(less) as less, avg(equal) as equal, avg(more) as more, avg(result) as result, sum(case when player <= minimum then 1 else 0 end) as nobetter ';
-    var query = sel + 'FROM STAT UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(20)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(50)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(100)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(200)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(500)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(1000)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(2000)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(5000))';
-    getDb().transaction(function(tx) {
+ //   var query = sel + 'FROM STAT UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(20)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(50)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(100)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(200)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(500)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(1000)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(2000)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(5000))';
+    var query = sel + 'FROM (select * from STAT order by ROWID desc limit(100)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(1000)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc)  ' ;
+   getDb().transaction(function(tx) {
         tx.executeSql(query, [], queryAllSuccess, errorCB);
     }, errorCB);
 }
@@ -146,11 +147,11 @@ function queryAllSuccess(tx, results) {
     //   console.log(JSON.stringify(r));
     aaa = results;
     console.log(results.rows);
-    var k = 0;
+    var k = -1;
     do {
         k = k + 1;
     } while (results.rows.item(k).n !== nn);
-    len = k;
+    len = k + 1;
 
     rrr += '<tr><th># of games (last &#8230;)</th>';
     for (var i = 0; i < len; i++) {
@@ -351,7 +352,8 @@ function getAllPrefs() {
     global_steps = get1Pref("steps", 30);
     global_mtime = get1Pref("speed", 250);
     global_colorblind = get1Pref("colorblind", 2);
-    global_cardface = get1Pref("cardface", 1);
+ //   global_cardface = get1Pref("cardface", 1);
+    global_cardface = 2;
 }
 
 function setAllPrefs() {

@@ -2,7 +2,7 @@
 boolean isProcessing = false;
 // galleryjs -------------------------------------------------------------
 
-/* @pjs font="resources/data/helveticaneueultralight.ttf"; preload="resources/data/img/allcards.gif,resources/data/img/newcards.png,resources/data/img/newcards2013.png,resources/data/img/numbersandcolors.png,resources/data/img/numbersandcolors.png,resources/data/photos/adula.png,resources/data/photos/mittelholzer.png,resources/data/photos/mittelholzer2.png,resources/data/photos/clariden.png,resources/data/photos/gelb.png,resources/data/photos/img_0611b.png,resources/data/photos/img_0812b.png,resources/data/photos/img_1021b.png,resources/data/photos/img_1029b.png,resources/data/photos/img_1049b.png,resources/data/photos/img_1058b.png,resources/data/photos/img_1080b.png,resources/data/photos/img_1119b.png,resources/data/photos/img_1125b.png,resources/data/photos/img_1144b.png,resources/data/photos/img_1536b.png,resources/data/photos/img_1747b.png,resources/data/photos/img_1972b.png,resources/data/photos/img_2070b.png,resources/data/photos/img_2225b.png,resources/data/photos/img_2856b.png,resources/data/photos/img_2867b.png,resources/data/photos/pratod.png,resources/data/photos/terri.png,resources/data/photos/terribw.png,resources/data/photos/toedi.png,resources/data/photos/uomo.png"; 
+/* @pjs font="resources/data/helveticaneueultralight.ttf"; preload="resources/data/img/allcards.gif,resources/data/img/newcards.png,resources/data/img/newcards2013.png,resources/data/img/numbersandcolors.png,resources/data/img/numbersandcolors.png,resources/data/photos/adula.png,resources/data/photos/mittelholzer.png,resources/data/photos/mittelholzer2.png,resources/data/photos/clariden.png,resources/data/photos/gelb.png,resources/data/photos/img_0611b.png,resources/data/photos/img_0812b.png,resources/data/photos/img_1021b.png,resources/data/photos/img_1029b.png,resources/data/photos/img_1049b.png,resources/data/photos/img_1058b.png,resources/data/photos/img_1080b.png,resources/data/photos/img_1119b.png,resources/data/photos/img_1125b.png,resources/data/photos/img_1144b.png,resources/data/photos/img_1536b.png,resources/data/photos/img_1747b.png,resources/data/photos/img_1972b.png,resources/data/photos/img_2070b.png,resources/data/photos/img_2225b.png,resources/data/photos/img_2856b.png,resources/data/photos/img_2867b.png,resources/data/photos/pratod.png,resources/data/photos/terri.png,resources/data/photos/terribw.png,resources/data/photos/toedi.png,resources/data/photos/uomo.png,resources/data/photos/grafik.png"; 
  */
 // Entwicklung processing:
 // Entwicklung processingjs:
@@ -244,13 +244,13 @@ void setup() {
   };
 
   String[] imagename = { 
-    "adula", "clariden", "gelb", "mittelholzer","mittelholzer2", "pratod", "terri", "terribw", "toedi", "uomo"
+    "adula", "clariden", "gelb", "mittelholzer","mittelholzer2", "pratod", "terri", "terribw", "toedi", "uomo", "grafik"
   };
 
   caption = [
      "Adula (3402m) from Val Malvalglia", "Laghetto (2233m) near Cima di Pinadee", "", "", "Pizzo Cassinello (3103m)", "", "Adula (3402m) from Pizzo Cassinello", "Oratorio di Santa Caterina d'Alessandria (Ponto Aquilesco)", 
     "From Campra to the east", "In Val Scaradra", "Motterascio", "Oratorio di Santa Caterina d'Alessandria (Ponto Aquilesco)", "Val Canal", "Adula (3402m) from Lago Retico", "Cima di Gana Bianca (2843m)", "Piz Terri (3149m)", "Piz Terri (3149m) from Corói",
-     "Adula (3402m) from south", "Clariden (3267m) and Tödi (3614m) from Pizzo dell'Uomo", "", "Adula (3402m), areal view by Walter Mittelholzer, 1923", "Adula (3402m), areal view by Walter Mittelholzer, 1919", "Prodóir (1460m)", "Piz Terri (3149m)", "Piz Terri (3149m) Corói", "Clariden (3267m) and Tödi (3614m)", "Pizzo dell'Uomo (2663m)"
+     "Adula (3402m) from south", "Clariden (3267m) and Tödi (3614m) from Pizzo dell'Uomo", "", "Adula (3402m), areal view by Walter Mittelholzer, 1923", "Adula (3402m), areal view by Walter Mittelholzer, 1919", "Prodóir (1460m)", "Piz Terri (3149m)", "Piz Terri (3149m) Corói", "Clariden (3267m) and Tödi (3614m)", "Pizzo dell'Uomo (2663m)", "Data: Swiss Glacier Monitoring"
 ];
 
   bimg = new PImage[imagenr.length + imagename.length];
@@ -360,6 +360,7 @@ void draw() {
  //   dirty = true;
     return;
   }
+
   if (getResult() == 0  && humanPlayer) {
     int nloops = 5;
     if (windrawloop > nloops) {
@@ -382,7 +383,7 @@ void draw() {
       fill(50,0,0);
       stroke(50,0,0);
       textFont(myFont, F9);
-      textR(caption[imgNow], ifact * 310, ifact * 342);
+      textR(caption[imgNow], ifact * 310, ifact * 344);
       noTint();
     }
     // println(bimg + " " + bimg[imgNow]);
@@ -566,10 +567,11 @@ void drawProgress(int part, int all) {
     //    fill(128); 
     //    rect(0, YPROGRESS + 8 * ifact, p * width, 4 * ifact);
     fill(0, 122, 255);
+    fill(122);
     rect(0, YPROGRESS + 16 * ifact, p * width, 4 * ifact);
   }
   stroke(0);
-  line(0, YPROGRESS - ifact, width, YPROGRESS -ifact);
+  line(0, YPROGRESS - ifact, width, YPROGRESS - ifact);
   line(0, YPROGRESS + DYPROGRESS, width, YPROGRESS + DYPROGRESS);
 }
 
@@ -658,7 +660,7 @@ void allDraw() {
     textFont(myFont, F12);
     if (res == 0) {
       // textC(getTranslation(LANG, "You win!"), XRES/2, YRES);
-      textC(getTranslation(LANG, "You win!"), XBU - ifact * 20, YRES - ifact * 2);
+//      textC(getTranslation(LANG, "You win!"), XBU - ifact * 20, YRES - ifact * 2);
     }
   } 
   if (explain != "") {

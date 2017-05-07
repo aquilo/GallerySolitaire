@@ -66,28 +66,39 @@ class Statistics {
   }
 
   void drawEvaluationLegendOne(int i, int myres, int iy, boolean evnot) {
-    if (i != 1) {
+    //     if (histo[i] > 1) return;
+    if (i != 1 && i != 95) {
+      int ix;
       if (histo[i] > 0) {
+        if (i == myres && histo[i] > 1) {
+          ix = min(i, 95) * ifact * 10 / 3;
+          c = color(55);
+          fill(c);
+          rect(ix, iy - 4, dx, 4);
+        }
         if (evnot && histo[i] > 1) {
           return;
         }
         c = getResColor(i, myres);
+        if (i == myres) {
+          c = color(255);
+        }
       } else {
         if (evnot) {
           return;
         }
-        c = color(220);
+        c = histo[i] == 0 && i == myres ? color(55) : color(220);
       }
       noStroke();
       dy = ifact * 9;
       fill(c);
-      int ix = min(i, 95) * ifact * 10 / 3;
+      ix = min(i, 95) * ifact * 10 / 3;
       if (i == 0) {
         dx = ifact * 13 / 3;
       } else {
         dx = ifact * 10 / 3;
       }
-      rect(ix, iy, dx, dy);
+       rect(ix, iy, dx, dy);
       stroke(0);
       line(ix, iy, ix, iy + dy - ifact);
       if (i == 0) {
@@ -375,7 +386,7 @@ void drawHisto(int x0, int y0) {
         c = color(120);
       } else {
        c = statistics.getResColor(float(i), resPlayer);
-       if (i % 5) {
+       if (i % 5 == 0) {
         c = darker(c, 0.9);
        }
       }
@@ -473,10 +484,10 @@ void drawStatistics(int x0, int y0) {
   int xm = x + ifact * 193;
   int dy = ifact * 125;
   fill(255);
-  rect(x, y, ifact * 200, dy);
+  rect(x, y, ifact * 200, dy + 2);
   stroke(0);
   noFill();
-  rect(x, y, ifact * 200, dy);
+  rect(x, y, ifact * 200, dy + 2);
   if (statistics.maximum < 0) return;
   y += ifact * 18;
   x += ifact * 7;

@@ -24,6 +24,6 @@ int global_steps = 35;
 int global_mtime = 200;
 int global_sayAuto = 0;
 int global_colorblind = 2;
-int global_cardface = 1;
+int global_cardface = 2;
 int screenwidth = 500;
 int global_evaluations = 1000;

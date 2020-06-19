@@ -69,3 +69,4 @@ cordova/
 build/
 touch/
 photos/
+node_modules/

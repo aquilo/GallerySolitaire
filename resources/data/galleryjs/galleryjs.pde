@@ -21,7 +21,7 @@ boolean isProcessing = false;
 
 // --------------------------------------------------------------
 // top left of Foundation, Tableau, Aces, Stock
-String version = "Version 2.5"; // a
+String version = "Version 2.6"; // a
 String device = "";
 String mymsg;
 int XSF, YSF, XST, YST, XSA, YSA, XSS, YSS; 
@@ -39,7 +39,7 @@ int XBUTTONS, DYBUTTON;
 int YPROGRESS, DYPROGRESS;
 int BUTTONSMALLHEIGHT;
 int WINDRAWSTART;
-int NEVALUATIONS = 250;
+int NEVALUATIONS = 1000;
 int nEvaluationsEnd = 0;
 int NEVALUATIONSTEP = 5;
 int BLUECIRCLERADIUS;
@@ -67,7 +67,9 @@ PImage cardImages[][][] = new PImage[3][4][13];
 PImage suitImages[] = new PImage[4];
 PImage numberImages[][] = new PImage[2][15];
 PImage bimg[];
+PImage lastGames;
 static PGraphics offScreen;
+static PGraphics lastGamesScreen;
 int imgNow;
 int windrawloop;
 
@@ -244,13 +246,13 @@ void setup() {
   };
 
   String[] imagename = { 
-    "adula", "clariden", "gelb", "mittelholzer","mittelholzer2", "pratod", "terri", "terribw", "toedi", "uomo", "grafik"
+    "adula", "clariden", "gelb", "mittelholzer","mittelholzer2", "pratod", "terri", "terribw", "toedi", "uomo", "grafik","showyourstripes_switzerland"
   };
 
   caption = [
      "Adula (3402m) from Val Malvalglia", "Laghetto (2233m) near Cima di Pinadee", "", "", "Pizzo Cassinello (3103m)", "", "Adula (3402m) from Pizzo Cassinello", "Oratorio di Santa Caterina d'Alessandria (Ponto Aquilesco)", 
     "From Campra to the east", "In Val Scaradra", "Motterascio", "Oratorio di Santa Caterina d'Alessandria (Ponto Aquilesco)", "Val Canal", "Adula (3402m) from Lago Retico", "Cima di Gana Bianca (2843m)", "Piz Terri (3149m)", "Piz Terri (3149m) from Corói",
-     "Adula (3402m) from south", "Clariden (3267m) and Tödi (3614m) from Pizzo dell'Uomo", "", "Adula (3402m), areal view by Walter Mittelholzer, 1923", "Adula (3402m), areal view by Walter Mittelholzer, 1919", "Prodóir (1460m)", "Piz Terri (3149m)", "Piz Terri (3149m) Corói", "Clariden (3267m) and Tödi (3614m)", "Pizzo dell'Uomo (2663m)", "Data: Swiss Glacier Monitoring"
+     "Adula (3402m) from south", "Clariden (3267m) and Tödi (3614m) from Pizzo dell'Uomo", "", "Adula (3402m), areal view by Walter Mittelholzer, 1923", "Adula (3402m), areal view by Walter Mittelholzer, 1919", "Prodóir (1460m)", "Piz Terri (3149m)", "Piz Terri (3149m) Corói", "Clariden (3267m) and Tödi (3614m)", "Pizzo dell'Uomo (2663m)", "Data: Swiss Glacier Monitoring", "Warming Stripes for Switzerland 1864-2019"
 ];
 
   bimg = new PImage[imagenr.length + imagename.length];
@@ -270,7 +272,12 @@ void setup() {
   for (int i = 0; i < randbuffer.length; i++) {
     randbuffer[i] = -1;
   }
- // println(ifact);
+
+ if (global_resimg == '' || global_resimg == 0 || global_resimg == "0") {
+   lastGames = loadImage(dataPathPhotos + "emptyLastGames.png");
+ } else {
+  lastGames = loadImage(global_resimg);
+ }
 
   statistics.statisticsgraphinit();
 
@@ -550,12 +557,22 @@ void drawProgress(int part, int all) {
     rect(0, YPROGRESS - 0.5 * ifact, width, DYPROGRESS + 0.5 * ifact);
     fill(0);
     textFont(myFont, F12);
-    textC("Tap to continue.", width / 2, YRES - ifact * 46);
+    textC("TapTapTap to continue.", width / 2, YRES - ifact * 46);
     fill(255, 200, 12);
     noStroke();
- //   rect(0, YPROGRESS + DYPROGRESS + 3, width, 0.6 * DYPROGRESS);
+  //   rect(0, YPROGRESS + DYPROGRESS + 3, width, 0.6 * DYPROGRESS);
     statistics.setResPlayer(resPlayer);
+    PImage nowImage;
+    nowImage = get(0, 0, width, width);
+    nowImage.resize(width/10, width / 10);
 
+    image(lastGames, width/10, width + 200);
+    image(nowImage, 0, width + 200);
+    lastGames = get(0, width + 200, width, width/10);
+    image(lastGames, 0, width + 200);
+
+    doSaveResultImage(lastGames);
+// 
   } else {
     float p = float(part) / float(all);
     if (p < drawNext) return;
@@ -574,6 +591,8 @@ void drawProgress(int part, int all) {
   line(0, YPROGRESS - ifact, width, YPROGRESS - ifact);
   line(0, YPROGRESS + DYPROGRESS, width, YPROGRESS + DYPROGRESS);
 }
+
+// DRAWING
 
 void allDraw() {
   if (mustDraw) {

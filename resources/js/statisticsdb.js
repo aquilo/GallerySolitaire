@@ -354,6 +354,8 @@ function getAllPrefs() {
     global_colorblind = get1Pref("colorblind", 2);
  //   global_cardface = get1Pref("cardface", 1);
     global_cardface = 2;
+    global_resimg = get1Pref('resimg', '');
+    global_resimgpos = get1Pref('resimgpos', 0);
 }
 
 function setAllPrefs() {
@@ -363,4 +365,17 @@ function setAllPrefs() {
     set1Pref("speed", global_mtime);
     set1Pref("colorblind", global_colorblind);
     set1Pref("cardface", global_cardface);
+}
+
+function bufferToBase64(buf) {
+    var binstr = Array.prototype.map.call(buf, function (ch) {
+        return String.fromCharCode(ch);
+    }).join('');
+    return btoa(binstr);
+}
+function doSaveResultImage(img) {
+    console.log(img);
+    var base64 = bufferToBase64(img.imageData.data);
+    set1Pref("resimg", base64);
+
 }

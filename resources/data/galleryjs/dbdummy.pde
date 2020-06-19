@@ -27,3 +27,7 @@ int global_colorblind = 2;
 int global_cardface = 2;
 int screenwidth = 500;
 int global_evaluations = 1000;
+
+void doSaveResultImage(rgbvals, clen, val) {
+    println("function");
+}

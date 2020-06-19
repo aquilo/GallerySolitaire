@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/aquilo/GallerySolitaire#readme",
   "devDependencies": {
-    "eslint": "^3.19.0",
+    "eslint": "^7.3.0",
     "eslint-config-google": "^0.7.1"
   }
 }

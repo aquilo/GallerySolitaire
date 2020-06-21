@@ -571,7 +571,7 @@ void drawProgress(int part, int all) {
     resImage = get(0, 0, width, width);
     nowImage = get(0, 0, width, width);
     nowImage.resize(width/25, width / 10);
-    int ylastgames = width + 300;
+    int ylastgames = width + 230;
     if (nEvaluationsEnd <= global_evaluations) {
       image(lastGames, width/25, ylastgames);
     }

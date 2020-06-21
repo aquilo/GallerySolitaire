@@ -572,7 +572,9 @@ void drawProgress(int part, int all) {
     nowImage = get(0, 0, width, width);
     nowImage.resize(width/25, width / 10);
     int ylastgames = width + 300;
-    image(lastGames, width/25, ylastgames);
+    if (nEvaluationsEnd <= global_evaluations) {
+      image(lastGames, width/25, ylastgames);
+    }
     image(nowImage, 0, ylastgames);
     stroke(255);
     line(width/25, ylastgames, width/25, ylastgames + 64);

@@ -143,3 +143,8 @@ h3 {
     text-transform:uppercase;
     white-space: nowrap;
 }
+
+table.statsummery td, th {
+    font-size: 12.5px;
+    text-align:right;
+}

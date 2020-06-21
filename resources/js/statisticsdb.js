@@ -143,7 +143,7 @@ function queryAllSuccess(tx, results) {
     var s;
     global_statistics = r;
     var nn = r.n;
-    var rrr = '<table border="1px" style="font-size: 10px">';
+    var rrr = '<table class="statsummery" border="0.0px" style="font-size: 12px">';
     //   console.log(JSON.stringify(r));
     aaa = results;
     console.log(results.rows);
@@ -159,46 +159,52 @@ function queryAllSuccess(tx, results) {
     }
     rrr += '<th>good:</th></tr>';
 
+    rrr += '<tr><th>% better or equal</th>';
+    for (var i = 0; i < len; i++) {
+        rrr += '<td>' + round_number(results.rows.item(i).more + results.rows.item(i).equal, 2) + '</td>';
+    }
+    rrr += '<th>81.62</th></tr>';
+
     rrr += '<tr><th>mean score</th>';
     for (var i = 0; i < len; i++) {
         rrr += '<td>' + round_number(results.rows.item(i).mean, 2) + '</td>';
     }
-    rrr += '<th>21.66</th></tr>';
+    rrr += '<th>21.7</th></tr>';
 
     rrr += '<tr><th>% games with score 0</th>';
     for (var i = 0; i < len; i++) {
         s = results.rows.item(i);
         rrr += '<td>' + percent(s.hzeros, s.n, 2) + '</td>';
     }
-    rrr += '<th>13.8</th></tr>';
+    rrr += '<th>14.6</th></tr>';
 
     rrr += '<tr><th>% solved of solvable</th>';
     for (var i = 0; i < len; i++) {
         s = results.rows.item(i);
         rrr += '<td>' + percent(s.hzeros, s.hsolvable, 2) + '</td>';
     }
-    rrr += '<th>45.2</th></tr>';
+    rrr += '<th>45.6</th></tr>';
 
     rrr += '<tr><th>% best result</th>';
     for (var i = 0; i < len; i++) {
         s = results.rows.item(i);
         rrr += '<td>' + percent(s.n - s.hcbetter, s.n, 2) + '</td>';
     }
-    rrr += '<th>23.3</th></tr>';
+    rrr += '<th>23.9</th></tr>';
 
     rrr += '<tr><th>% mean result</th>';
     for (var i = 0; i < len; i++) {
         s = results.rows.item(i);
         rrr += '<td>' + round_number(s.result, 2) + '</td>';
     }
-    rrr += '<th>77.9</th></tr>';
+    rrr += '<th>78.2</th></tr>';
 
     rrr += '<tr><th>% better than c\'s mean</th>';
     for (var i = 0; i < len; i++) {
         s = results.rows.item(i);
         rrr += '<td>' + percent(s.hwins, s.n, 2) + '</td>';
     }
-    rrr += '<th>85.0</th></tr>';
+    rrr += '<th>85.6</th></tr>';
 
 
     rrr += '</table>';
@@ -221,8 +227,8 @@ function queryAllSuccess(tx, results) {
         '</p><strong>Best Result</strong>: In only <b>' + percent(r.n - r.hcbetter, r.n, 2) + '%</b> (<i>23.6%</i>) ',
         'you achieved the best possible result.</p>',
 
-        '</p><strong>Your Overall Skill</strong>: You are at least as good as the computer in <b>' + round_number(r.more + r.equal, 2) + '%</b> (<i>...%</i>) ',
-        'of the games (compared to the computer, your result was better result in <strong>' + round_number(r.more, 1) + '%</strong>, equal in <strong>' + round_number(r.equal, 1) + '%</strong>, and worse in <strong>' + round_number(r.less, 1) + '%</strong>.</p>',
+        '</p><strong>Perfect Games</strong>: You are at least as good as the computer in <b>' + round_number(r.more + r.equal, 2) + '%</b> (<i>81.6%</i>) ',
+        'of the games (compared to the computer your result was better result in <strong>' + round_number(r.more, 1) + '%</strong>, equal in <strong>' + round_number(r.equal, 1) + '%</strong>, and worse in <strong>' + round_number(r.less, 1) + '%</strong>.</p>',
         '<hr>',
         '<strong>Mean result</strong>: <b>' + round_number(r.result, 2) + '%</b> (<i>78.1%</i>)<br/>',
         'The result of a single game is the percentage of computer\'s scores worse than your\'s (mean: <strong>' + round_number(r.more, 2) + '</strong>) plus half of the drawn attempts (mean: <strong>' + round_number(r.equal, 2) + ' / 2</strong>). You see this number after a evaluation in the center of ',

@@ -221,6 +221,9 @@ function queryAllSuccess(tx, results) {
         '</p><strong>Best Result</strong>: In only <b>' + percent(r.n - r.hcbetter, r.n, 2) + '%</b> (<i>23.6%</i>) ',
         'you achieved the best possible result.</p>',
 
+        '</p><strong>Your Overall Skill</strong>: You are at least as good as the computer in <b>' + round_number(r.more + r.equal, 2) + '%</b> (<i>...%</i>) ',
+        'of the games (compared to the computer, your result was better result in <strong>' + round_number(r.more, 1) + '%</strong>, equal in <strong>' + round_number(r.equal, 1) + '%</strong>, and worse in <strong>' + round_number(r.less, 1) + '%</strong>.</p>',
+        '<hr>',
         '<strong>Mean result</strong>: <b>' + round_number(r.result, 2) + '%</b> (<i>78.1%</i>)<br/>',
         'The result of a single game is the percentage of computer\'s scores worse than your\'s (mean: <strong>' + round_number(r.more, 2) + '</strong>) plus half of the drawn attempts (mean: <strong>' + round_number(r.equal, 2) + ' / 2</strong>). You see this number after a evaluation in the center of ',
         'the horizontal coloured bar.</p>',
@@ -332,7 +335,9 @@ function get1Pref(prefName, defaultValue) {
             } else if (pref === 'true') {
                 pref = true;
             } else {
-                pref *= 1;
+                if (defaultValue !== '---') {
+                    pref *= 1;
+                }
             }
         }
     }
@@ -354,8 +359,9 @@ function getAllPrefs() {
     global_colorblind = get1Pref("colorblind", 2);
  //   global_cardface = get1Pref("cardface", 1);
     global_cardface = 2;
-    global_resimg = get1Pref('resimg', '');
-    global_resimgpos = get1Pref('resimgpos', 0);
+    global_resimg = get1Pref('resimg', '---');
+    global_auto = get1Pref("auto", 1);
+
 }
 
 function setAllPrefs() {
@@ -364,7 +370,8 @@ function setAllPrefs() {
     set1Pref("steps", global_steps);
     set1Pref("speed", global_mtime);
     set1Pref("colorblind", global_colorblind);
-    set1Pref("cardface", global_cardface);
+    set1Pref("cardfacecolorblind", global_colorblind);
+    set1Pref("auto", global_auto);
 }
 
 function bufferToBase64(buf) {
@@ -374,8 +381,7 @@ function bufferToBase64(buf) {
     return btoa(binstr);
 }
 function doSaveResultImage(img) {
-    console.log(img);
-    var base64 = bufferToBase64(img.imageData.data);
+    var base64 = img.sourceImg.toDataURL();
     set1Pref("resimg", base64);
-
 }
+   

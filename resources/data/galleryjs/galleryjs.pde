@@ -58,7 +58,6 @@ boolean redoing = false;
 int ndraw = 00;
 boolean dirty = true;
 boolean undoing = false;
-boolean noHelp = false;
 
 color winfrom, winto, lostfrom, lostto;
 
@@ -68,6 +67,8 @@ PImage suitImages[] = new PImage[4];
 PImage numberImages[][] = new PImage[2][15];
 PImage bimg[];
 PImage lastGames;
+PImage resImage;
+
 static PGraphics offScreen;
 static PGraphics lastGamesScreen;
 int imgNow;
@@ -91,7 +92,7 @@ int nAutoMoves = 0;
 boolean gameFinished = false;
 boolean mustDraw = true;
 static boolean osp = true; // offscreen painting
-Button btnEvaluate, btnNew, btnRedo, btnUndo, btnAuto;
+Button btnEvaluate, btnNew, btnRedo, btnUndo;//, btnAuto;
 boolean humanPlayer = true;
 int nrMovable[] = new int[32];
 MoveStack moveStack = new MoveStack(104);
@@ -225,14 +226,18 @@ void setup() {
 
 //  btnEvaluate = new Button(getTranslation(LANG, "Evaluate"), XRES - ifact * 135, YRES - ifact * 15, WBF, HBF, 1);
 //  btnEvaluate = new Button(getTranslation(LANG, "Evaluate"), XRES - ifact * 105, YRES - ifact * 15, WBF, HBF, 1);
-    btnEvaluate = new Button(getTranslation(LANG, "Evaluate"), XRES - ifact * 105, YRES-  ifact * 10, WBF, HBF, 1);
+//  btnEvaluate = new Button(getTranslation(LANG, "Evaluate"), XRES - ifact * 105, YRES-  ifact * 10, WBF, HBF, 1);
 
-  btnNew = new Button(getTranslation(LANG, "New"), XBN - ifact * 60, YBN + 25, WBN, HBN, 1);
-  btnUndo = new Button(getTranslation(LANG, "Undo"), XBU - ifact * 50, YBU - ifact * 6, WBU, HBU, 1);
+int ybtns = YBN + 120;
+  btnEvaluate = new Button(getTranslation(LANG, "Evaluate"), XBN + ifact * 132, ybtns, WBF, HBF, 1);
+
+  btnNew = new Button(getTranslation(LANG, "New"), XBN - ifact * 60, ybtns, WBN, HBN, 1);
+  btnUndo = new Button(getTranslation(LANG, "Undo"), XBN, ybtns, WBU, HBU, 1);  
+  //btnUndo = new Button(getTranslation(LANG, "Undo"), XBU - ifact * 50, YBU - ifact * 6, WBU, HBU, 1);
   // btnAuto = new Button(getTranslation(LANG, "Auto"), XBN + ifact * 15, YBU - ifact * 2, WBN, HBN, 1);
-  btnAuto = new Button(getTranslation(LANG, "Auto\nplay"), XBN + ifact * 100, YBN + 25, WBN, HBN, 1);
+  // btnAuto = new Button(getTranslation(LANG, "Auto\nplay"), XBN + ifact * 100, ybtns, WBN, HBN, 1);
 //  btnRedo = new Button(getTranslation(LANG, "Redo"), XBN + ifact * 15, YBN, WBN, HBN, 1);
-  btnRedo = new Button(getTranslation(LANG, "Redo"), XBN + ifact * 20, YBN + 25, WBN, HBN, 1);
+  btnRedo = new Button(getTranslation(LANG, "Redo"), XBN + ifact * 60, ybtns, WBU, HBU, 1);  
   for (int i = 2; i < 34; i++) {
     serie[i - 2] = i;
     serie32[i - 2] = i;
@@ -272,7 +277,6 @@ void setup() {
   for (int i = 0; i < randbuffer.length; i++) {
     randbuffer[i] = -1;
   }
-
  if (global_resimg == '' || global_resimg == 0 || global_resimg == "0") {
    lastGames = loadImage(dataPathPhotos + "emptyLastGames.png");
  } else {
@@ -414,6 +418,7 @@ void draw() {
   allMovableChecks();
   allAutoMovableChecks();
   allJamChecks();
+
   res = getResult();
 
   gameFinished = stockPile.empty() && !cardMoving() && noMovables(); 
@@ -425,7 +430,7 @@ void draw() {
   dirty = cardMoving();
   for (int i = 0; i < 34; i++) {
     if (allPiles[i].autoMovable) {
-      if (!humanPlayer || (global_sayAuto == 0 && !noHelp)) allPiles[i].doAutoClick();
+      if (!humanPlayer || (global_sayAuto == 0 && global_auto !== 0)) allPiles[i].doAutoClick();
 //      if (global_sayAuto) allPiles[i].doAutoClick();
       dirty = true;
       return;
@@ -557,20 +562,23 @@ void drawProgress(int part, int all) {
     rect(0, YPROGRESS - 0.5 * ifact, width, DYPROGRESS + 0.5 * ifact);
     fill(0);
     textFont(myFont, F12);
-    textC("TapTapTap to continue.", width / 2, YRES - ifact * 46);
+    textC("Tap to continue.", width / 2, YRES - ifact * 46);
     fill(255, 200, 12);
     noStroke();
   //   rect(0, YPROGRESS + DYPROGRESS + 3, width, 0.6 * DYPROGRESS);
     statistics.setResPlayer(resPlayer);
     PImage nowImage;
+    resImage = get(0, 0, width, width);
     nowImage = get(0, 0, width, width);
-    nowImage.resize(width/10, width / 10);
-
-    image(lastGames, width/10, width + 200);
-    image(nowImage, 0, width + 200);
-    lastGames = get(0, width + 200, width, width/10);
-    image(lastGames, 0, width + 200);
-
+    nowImage.resize(width/25, width / 10);
+    int ylastgames = width + 300;
+    image(lastGames, width/25, ylastgames);
+    image(nowImage, 0, ylastgames);
+    stroke(255);
+    line(width/25, ylastgames, width/25, ylastgames + 64);
+    lastGames = get(0, ylastgames, width, width/10);
+    //image(lastGames, 0, ylastgames);
+    lastGames.loadPixels();
     doSaveResultImage(lastGames);
 // 
   } else {
@@ -608,6 +616,9 @@ void allDraw() {
     for (int i = 0; i < 34; i++) {
       allPiles[i].draw();
     }
+     int ylastgames = width + 300;
+     offScreen.image(lastGames, 0, ylastgames);
+
     offScreen.endDraw();
     mustDraw = false;
     osp = false;
@@ -616,8 +627,10 @@ void allDraw() {
   if (!evaluated) {
     image(offScreen, 0, 0);
   } else {
+    // HERE
+    stroke(255);
     fill(255);
-    rect(0, ifact * 350, width, height);
+    rect(0, ifact * 350, width, ifact * 80);
   }
 
   if (global_helplevel == 9 || global_helplevel == 10) {
@@ -628,7 +641,7 @@ void allDraw() {
 
   if (humanPlayer)
   btnUndo.draw(moveStack.nMoves > 0 && res != 0);
-  btnAuto.draw3(true, !noHelp);
+  //btnAuto.draw3(true, !global_noHelp);
 
   if (humanPlayer) {
     int nact = moverCollection.draw();
@@ -649,7 +662,7 @@ void allDraw() {
   }
   if (debug) My.msg(mymsg);
   btnEvaluate.draw(gameFinished);
-  btnAuto.draw3(!gameFinished, !noHelp);
+  // btnAuto.draw3(!gameFinished, !global_noHelp);
   fill(col_resulttext);
   if (gameFinished) {
     //   textFont(myFont, F18); 
@@ -785,11 +798,12 @@ void doUndoClick() {
   doUndo();
 }
 
+/*
 void doAutoSwitch() {
-  noHelp = !noHelp;
+  global_noHelp = !global_noHelp;
   dirty = true;
 }
-
+*/
 boolean noMovables() {
   for (int i = 2; i < 34; i++) {
     if (allPiles[i].movable)
@@ -833,7 +847,7 @@ void mouseClicked() {
 
   if (btnEvaluate.includes(x, y)) {
     btnEvaluate.draw(false);
-    btnAuto.draw3(false, false);
+    //btnAuto.draw3(false, false);
 
     moveStack.clear();
     evaluating = true;
@@ -874,7 +888,7 @@ void mouseClicked() {
   if (btnNew.includes(x, y) && !evaluating) newGame();
   if (btnRedo.includes(x, y) && !evaluating) redoGame();
   if (btnUndo.includes(x, y)) doUndoClick();
-  if (btnAuto.includes(x, y)) doAutoSwitch();
+  //if (btnAuto.includes(x, y)) doAutoSwitch();
 }
 
 void keyPressed() {
@@ -953,3 +967,4 @@ void shuffle() {
     cards[i] = card;
   }
 }
+

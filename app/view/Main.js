@@ -8,6 +8,7 @@ statText = '---';
 global_steps = 55;
 global_mtime = 200;
 global_sayAuto = 0;
+global_auto = 1;
 global_csv = "";
 global_colorblind = 2; // 1: blau / 2: grün
 global_cardface = 2;
@@ -305,18 +306,30 @@ Ext.define('GallerySolitaire.view.Main', {
                 }
               }
             },*/
-          {
-            xtype: 'togglefield',
-            name: 'sayAuto',
-            label: 'Show auto move reason',
-            labelWidth: '80%',
-            listeners: {
-              change: function (checkboxfield, newValue, oldValue) {
-                global_sayAuto = newValue ? 1 : 0;
+            {
+              xtype: 'togglefield',
+              name: 'sayAuto',
+              label: 'Show auto move reason',
+              labelWidth: '80%',
+              listeners: {
+                change: function (checkboxfield, newValue, oldValue) {
+                  global_sayAuto = newValue ? 1 : 0;
+                }
+              }
+            },
+            {
+              xtype: 'togglefield',
+              name: 'sayNoHelp',
+              label: 'Do auto moves',
+              labelWidth: '80%',
+              value: 1,
+              listeners: {
+                change: function (checkboxfield, newValue, oldValue) {
+                  global_auto = newValue ? 1 : 0;
+                }
               }
             }
-          }
-        ]
+            ]
       }, {
         xtype: 'fieldset',
         instructions: 'Include your game results in an email<br/>(in CSV format) for further evaluation.',

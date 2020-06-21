@@ -228,7 +228,7 @@ void setup() {
 //  btnEvaluate = new Button(getTranslation(LANG, "Evaluate"), XRES - ifact * 105, YRES - ifact * 15, WBF, HBF, 1);
 //  btnEvaluate = new Button(getTranslation(LANG, "Evaluate"), XRES - ifact * 105, YRES-  ifact * 10, WBF, HBF, 1);
 
-int ybtns = YBN + 120;
+int ybtns = YBN + 60;
   btnEvaluate = new Button(getTranslation(LANG, "Evaluate"), XBN + ifact * 132, ybtns, WBF, HBF, 1);
 
   btnNew = new Button(getTranslation(LANG, "New"), XBN - ifact * 60, ybtns, WBN, HBN, 1);
@@ -618,7 +618,7 @@ void allDraw() {
     for (int i = 0; i < 34; i++) {
       allPiles[i].draw();
     }
-     int ylastgames = width + 300;
+     int ylastgames = width + 230;
      offScreen.image(lastGames, 0, ylastgames);
 
     offScreen.endDraw();

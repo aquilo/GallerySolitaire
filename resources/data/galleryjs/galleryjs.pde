@@ -570,15 +570,15 @@ void drawProgress(int part, int all) {
     PImage nowImage;
     resImage = get(0, 0, width, width);
     nowImage = get(0, 0, width, width);
-    nowImage.resize(width/25, width / 10);
+    nowImage.resize(width/25, width / 16);
     int ylastgames = width + 230;
     if (nEvaluationsEnd <= global_evaluations) {
       image(lastGames, width/25, ylastgames);
     }
     image(nowImage, 0, ylastgames);
     stroke(255);
-    line(width/25, ylastgames, width/25, ylastgames + 64);
-    lastGames = get(0, ylastgames, width, width/10);
+    line(width/25, ylastgames, width/25, ylastgames + width/16);
+    lastGames = get(0, ylastgames, width, width/16);
     //image(lastGames, 0, ylastgames);
     lastGames.loadPixels();
     doSaveResultImage(lastGames);

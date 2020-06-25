@@ -160,7 +160,7 @@ Ext.define('com.mapresso.gallery.view.Main', {
         xtype: 'label',
         //            styleHtmlCls: 'rules',
         styleHtmlContent: true,
-        html: '<div class="rules"><center><h1>Gallery Solitaire</h1>Version 2.5, &copy; 2017, Adrian Herzog<br/><br/>' +
+        html: '<div class="rules"><center><h1>Gallery Solitaire</h1>Version 2.6, &copy; 2020, Adrian Herzog<br/><br/>' +
         '<table border=0>' + 
 
         '<tr>' +

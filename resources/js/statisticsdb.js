@@ -1,24 +1,48 @@
-/*jslint sloppy: true */
+function _a9d8362ce3d804372a103b868a11faf1fb5f3e73(){};function _46237476135bb58b04c0b8c0d56f12a18846e987(){};function _06cf07cd3593c0b0ccce741596c038bb94c9d5fe(){};function _c55be8cc37980247e9a7c11edd225517bf427095(){};function _9201f8f1da2c596df206811a4f6f90a32936c015(){};function _c3465cf01e68c03b6ed252859596370edc55ca56(){};function _aa071c07f988ccb0f13b24607676eab52cc6d55f(){};function _e19e95b7c3be40c0d1ee4b72b7b310ecff588362(){};function _fb3137464ef6ddc4cacf545f652dfa0a549ae0fb(){};/*jslint sloppy: true */
 /*global getDb, dbGetMaxNr, errorCB, dbGetAll, successCB, queryAllSuccess, window */
 
 fields = "datetime, alpha, player, result, less, equal, " +
     "more, minimum, median, mean, " +
     "maximum, mode, scores, trials, nAuto, nMoves";
+myDB = "";
+
+function startDb() {
+    myDB = window.sqlitePlugin.openDatabase({name: "mySQLite.db", location: 'default'});
+    dbCreate();
+}   
 
 function getDb() {
-    return window.openDatabase("Database", "1.0", "Cordova STAT", 200000);
+    console.log("... getDb");
+  //  return window.sqlitePlugin.openDatabase({name: "mySQLite.db", location: 'default'});
+    return myDB;
 }
 
+function dbCreate() {
+    myDB.transaction(function(tx) {
+        tx.executeSql('CREATE TABLE IF NOT EXISTS STAT (' +
+            'datetime TEXT PRIMARY KEY, alpha REAL, player INTEGER, result REAL, less REAL, equal REAL, ' +
+            'more REAL, minimum INTEGER, median INTEGER, mean REAL, ' +
+            'maximum INTEGER, mode INTEGER, scores INTEGER, trials INTEGER, nAuto INTEGER, nMoves INTEGER)');
+        tx.executeSql('CREATE VIEW IF NOT EXISTS STATV as ' +
+            'SELECT avg(player) as player, avg(mean) as mean, count(*) as n  FROM STAT');
+    },
+    errorCB);
+}
+
+
 function getLastGameNr() {
+    console.log("... getLastGameNr");
     getDb().transaction(dbGetMaxNr, errorCB);
 }
 
 function getAllStats0() {
+    console.log("... getDb");
     getDb().transaction(dbGetAll, errorCB, successCB);
 }
 
 
 function dbGetAll(tx) {
+    console.log("... dbGetAll");
     //    tx.executeSql('SELECT * FROM STAT', [], queryAllSuccess, errorCB);
     //    tx.executeSql('SELECT *  FROM STAT', [], queryAllSuccess, errorCB);
     tx.executeSql('SELECT avg(player) as player, avg(mean) as mean, count(*) as n  FROM STAT', [], queryAllSuccess, errorCB);
@@ -39,15 +63,17 @@ function percent(ip, itot, dec) {
 // --------------------------------------------------
 
 function getAllStats() {
+    console.log("... getAllStats");
     var sel = 'SELECT sum(case when player < mean then 1 else 0 end) as hwins, sum(case when player = 0 or minimum = 0 then 1 else 0 end) as hsolvable, sum(case when player < minimum then 1 else 0 end) as hminwins, sum(case when player = mean then 1 else 0 end) as hdrawn, sum(case when player = 0 then 1 else 0 end) as hzeros, sum(case when player > minimum then 1 else 0 end) as hcbetter, avg(player) as player, avg(mean) as mean, count(*) as n, sum(nauto) as nauto, sum(nmoves) as nmoves, avg(less) as less, avg(equal) as equal, avg(more) as more, avg(result) as result, sum(case when player <= minimum then 1 else 0 end) as nobetter ';
  //   var query = sel + 'FROM STAT UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(20)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(50)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(100)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(200)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(500)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(1000)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(2000)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(5000))';
-    var query = sel + 'FROM (select * from STAT order by ROWID desc limit(100)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(1000)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc)  ' ;
-   getDb().transaction(function(tx) {
-        tx.executeSql(query, [], queryAllSuccess, errorCB);
-    }, errorCB);
+ var query = sel + 'FROM (select * from STAT order by ROWID desc limit(100)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(1000)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc)  ' ;
+ getDb().transaction(function(tx) {
+      tx.executeSql(query, [], queryAllSuccess, errorCB);
+  }, errorCB);
 }
 
 function queryDumpSuccess(tx, results) {
+    console.log("... queryDumpSuccess");
     var r = results.rows.item(0),
         csvData = "",
         len = results.rows.length,
@@ -121,23 +147,26 @@ function queryDumpSuccess(tx, results) {
 
     //   EmailComposer.prototype.showEmailComposer("GallerySolitaire Data, " + new Date(),
     //     global_csv, "", "", "", true);
+    console.log(global_csv);
     cordova.plugins.email.open({
 
         subject: 'GallerySolitaire Data, ' + new Date(),
         body: global_csv,
-        isHtml: true
+        isHtml: false
 
 
     })
 }
 
 function doDumpDb(tx) {
+    console.log("... doDumpDb");
     getDb().transaction(function(tx) {
         tx.executeSql('SELECT * FROM STAT', [], queryDumpSuccess, errorCB);
     }, errorCB);
 }
 
 function queryAllSuccess(tx, results) {
+    console.log("... getDb");
     var len = results.rows.length;
     var r = results.rows.item(len - 1);
     var s;
@@ -262,33 +291,40 @@ function queryAllSuccess(tx, results) {
 // --------------------------------------------------
 
 function errorCB(err) {
+    console.log("... errorCB");
     //  alert("Error processing SQL: " + err.code + ": " + err.message);
     console.log("Error processing SQL: " + err.code + ": " + err.message);
 }
 
 function successCB(tx, tresults) {
+    console.log("... successCB");
     //   alert("success!");
     // statText = '+++';
 }
 
 function saveStat(tx) {
+    console.log("... saveStat");
     tx.executeSql('REPLACE INTO STAT (' + fields + ') VALUES (' + allValues + ')');
 }
 
 function dbSave(allValues0) {
+    console.log("... dbSave");
     allValues = allValues0;
     getDb().transaction(saveStat, errorCB, successCB);
 }
 
 function dropStat(tx) {
+    console.log("... dropStat");
     tx.executeSql('DROP TABLE IF EXISTS STAT');
 }
 
 function dbDrop() {
+    console.log("... dbDrop");
     getDb().transaction(dropStat, errorCB, successCB);
 }
 
 function createStat(tx) {
+    console.log("... createStat");
     tx.executeSql('CREATE TABLE IF NOT EXISTS STAT (' +
         'datetime TEXT PRIMARY KEY, alpha REAL, player INTEGER, result REAL, less REAL, equal REAL, ' +
         'more REAL, minimum INTEGER, median INTEGER, mean REAL, ' +
@@ -297,9 +333,12 @@ function createStat(tx) {
         'SELECT avg(player) as player, avg(mean) as mean, count(*) as n  FROM STAT');
 }
 
-function dbCreate() {
-    getDb().transaction(createStat, errorCB, successCB);
+//____________________________
+function dbCreate000() {
+    console.log("... dbCreate");
+  //  getDb().transaction(createStat, errorCB, successCB);
 }
+
 // ------------------------------------------------------------------
 
 function dbGetMaxNr(tx) {
@@ -315,13 +354,6 @@ function querySuccess(tx, results) {
         gamenr = 0;
     }
 }
-
-/* 
- function onDeviceReady() {
- var db = window.openDatabase("Database", "1.0", "Cordova STAT", 200000);
- db.transaction(populateDB, errorCB, successCB)
- }
- */
 
 
 function setStepsPref() {

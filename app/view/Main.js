@@ -16,7 +16,7 @@ global_evaluations = 1000;
 global_statistics0 = {};
 global_statistics = {};
 
-Ext.define('GallerySolitaire.view.Main', {
+Ext.define('com.mapresso.gallery.view.Main', {
   extend: 'Ext.tab.Panel',
   requires: ['Ext.TitleBar',
     'Ext.form.FieldSet',
@@ -170,10 +170,10 @@ Ext.define('GallerySolitaire.view.Main', {
         'http://gallery.mapresso.com</a></td></tr>' + 
 
         '<tr>' +
-        '<td align="center" width=31><a href="#" onclick="window.open(encodeURI(\'http://facebook.com/GallerySol#phonegap=external\'), \'_system\')">' +
+        '<td align="center" width=31><a href="#" onclick="window.open(encodeURI(\'http://https://www.facebook.com/Gallery-Solitaire-113763543718658#phonegap=external\'), \'_system\')">' +
         '<img src="resources/data/img/FB_logo_blue_29.png" width="29" "height="29" align="middle"></a></td>' +
-        '<td><a href="#" onclick="window.open(encodeURI(\'http://facebook.com/GallerySol#phonegap=external\'), \'_system\')">' +
-        'http://facebook.com/GallerySol</a></td></tr>' + 
+        '<td><a href="#" onclick="window.open(encodeURI(\'http://https://www.facebook.com/Gallery-Solitaire-113763543718658#phonegap=external\'), \'_system\')">' +
+        'http://https://www.facebook.com/Gallery-Solitaire-113763543718658</a></td></tr>' + 
 
         '<tr>' +
         '<td align="center" width=31><a href="#" onclick="window.open(encodeURI(\'http://twitter.com/gallerysol1#phonegap=external\'), \'_system\')">' +

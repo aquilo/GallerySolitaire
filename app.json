@@ -1,5 +1,4 @@
 {
-    "framework": "touch",
     "builds": {
         "web": {"default": true},
         "native": {
@@ -21,12 +20,22 @@
     /**
      * The application's namespace, used by Sencha Command to generate classes
      */
-    "name": "GallerySolitaire",
+    "name": "com.mapresso.gallery",
 
     /**
      * The file path to this application's front HTML document, relative to this app.json file
      */
     "indexHtmlPath": "index.html",
+
+    /**
+     * The Sencha Framework for this application: "ext" or "touch".
+     */
+    "framework": "touch",
+
+    "classpath": [
+        "app",
+        "app.js"
+    ],
 
     /**
      * The absolute URL to this application in development environment, i.e: the URL to run this application
@@ -66,21 +75,22 @@
             "path": "bootstrap.js",
             "x-bootstrap": true
         },
-        {
+         {
+            "path": "resources/js/statisticsdb.js",
+             "update": "full"
+         },
+         {
             "path": "app.js",
             "bundle": true,  /* Indicates that all class dependencies are concatenated into this file when build */
             "update": "delta"
-        },
-        {
-           "path": "resources/js/statisticsdb.js",
-            "update": "full"
-        },
-        {
-  //         "path": "resources/js/processing-1.4.1.min.js",
-       //   "path": "resources/js/processing-1.4.8-min.js",
-           "path": "resources/js/processing-1.4.1.js",
-            "update": "full"
-        }
+        },        
+         {
+   //         "path": "resources/js/processing-1.4.1.min.js",
+           "path": "resources/js/processing-1.4.8-min.js",
+         //   "path": "resources/js/processing-1.4.1.js",
+             "update": "full"
+         }
+ 
     ],
 
     /**
@@ -101,18 +111,12 @@
      */
     "css": [
         {
-            "path": "resources/css/st.css"
-            },
-        {
-            "path": "touch/resources/css/cupertino.css",
-            "platform": ["chrome", "safari", "ios", "ios-classic", "firefox"],
-            "theme": "Cupertino",
+            "path": "resources/css/cupertino.css",
             "update": "delta"
- //       },
-   //    {
-  //          "path": "resources/css/app.css",
-    //        "update": "delta"
-
+        },
+        {
+            "path": "resources/css/st.css",
+            "update": "delta"
         }
     ],
 
@@ -142,29 +146,16 @@
      * Extra resources to be copied along when build
      */
     "resources": [
-        "resources/data",
+        "resources/images",
         "resources/icons",
-        // "resources/loading",
-        "resources/sass",
-        "resources/startup",
-        "resources/data/css",
-        "resources/data/galleryjs",
-        "resources/data/img",
-        "resources/data/js",
-        "resources/data/photos",
-        "resources/data/galleryjs/data"
+        "resources/startup"
     ],
-    // "resources": [
-    //     "resources/images",
-    //     "resources/icons",
-    //     "resources/startup"
-    // ],
 
     /**
      * File / directory name matchers to ignore when copying to the builds, must be valid regular expressions
      */
     "ignore": [
-        "\.svn$"
+        "\\.svn$"
     ],
 
     /**
@@ -180,8 +171,28 @@
     ],
 
     /**
+     * Controls for localStorage caching
+     *   "cache": {
+     *       // This property controls whether localStorage caching of this manifest file is on or off.
+     *       // if disabled no deltas will be generated during a build and full updates will be disabled
+     *       "enable": false,
+     *
+     *       // This property allows for global toggle of deltas.
+     *       // If set to a string the value will be used as the path to where deltas will be generated relative to you build.
+     *       // If set to a Truthy Value the default path ok "deltas" will be used
+     *       // If set to a Falsey value or if this property is not present deltas will be disabled and not generated.
+     *       //
+     *       "deltas": "deltas"
+     *   }
+     */
+    "cache": {
+        "enable": true,
+        "deltas": "deltas"
+    },
+
+    /**
      * Uniquely generated id for this application, used as prefix for localStorage keys.
      * Normally you should never change this value.
      */
-    "id": "ed28c345-eea4-4fcc-82d6-37e80a73fc0d"
+    "id": "7d9d81a3-a76f-4829-a07a-038d778f9053"
 }

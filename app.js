@@ -1,4 +1,4 @@
-function _aa814c3d61196715043ec78e39123ca23d18cd11(){};/*
+/*
     This file is generated and updated by Sencha Cmd. You can edit this file as
     needed for your application, but these edits will have to be merged by
     Sencha Cmd when it performs code generation tasks such as generating new
@@ -12,7 +12,6 @@ function _aa814c3d61196715043ec78e39123ca23d18cd11(){};/*
 
 Ext.application({
     name: 'com.mapresso.gallery',
-    isNative: true,
 
     requires: [
         'Ext.MessageBox'
@@ -22,20 +21,37 @@ Ext.application({
         'Main'
     ],
 
+
     isIconPrecomposed: true,
-    
+
     launch: function() {
         deltay = 0;
-        document.body.style.marginTop = "220px";
-        Ext.Viewport.setHeight(Ext.Viewport.getWindowHeight() - 220);
-        deltay = 220;
+        document.body.style.marginTop = "0px";
+        Ext.Viewport.setHeight(Ext.Viewport.getWindowHeight() - 0);
+        deltay = 0;
         getAllPrefs();
         Ext.Viewport.add(Ext.create('com.mapresso.gallery.view.Main'));
-        Processing.reload();
+        console.log('...Processing.reload1');
+        //Processing.reload();
         //        LANG = navigator.language.substring(0, 2);
         document.addEventListener('deviceready', function() {
+
+     
+            window.sqlitePlugin.echoTest(function() {
+                console.log('...ECHO test OK');
+              });
+              window.sqlitePlugin.selfTest(function() {
+                console.log('...SELF test OK');
+              });
+            // db = window.sqlitePlugin.openDatabase({
+            //   name: 'my.db',
+            //   location: 'default',
+            // });
             startDb();
             getAllStats(); 
+            console.log('...Processing.reload');
+            Processing.reload();
+            console.log(Processing);
         });
 },
 

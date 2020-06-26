@@ -86,8 +86,8 @@
         },        
          {
    //         "path": "resources/js/processing-1.4.1.min.js",
-           "path": "resources/js/processing-1.4.8-min.js",
-         //   "path": "resources/js/processing-1.4.1.js",
+         //   "path": "resources/js/processing-1.4.8-min.js",
+           "path": "resources/js/processing-1.4.1.js",
              "update": "full"
          }
  
@@ -118,6 +118,7 @@
             "path": "resources/css/st.css",
             "update": "delta"
         }
+
     ],
 
     /**
@@ -146,8 +147,10 @@
      * Extra resources to be copied along when build
      */
     "resources": [
+        "resources/data",
         "resources/images",
         "resources/icons",
+        "resources/sass",
         "resources/startup"
     ],
 

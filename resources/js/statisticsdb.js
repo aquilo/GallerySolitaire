@@ -1,4 +1,4 @@
-function _a9d8362ce3d804372a103b868a11faf1fb5f3e73(){};function _46237476135bb58b04c0b8c0d56f12a18846e987(){};function _06cf07cd3593c0b0ccce741596c038bb94c9d5fe(){};function _c55be8cc37980247e9a7c11edd225517bf427095(){};function _9201f8f1da2c596df206811a4f6f90a32936c015(){};function _c3465cf01e68c03b6ed252859596370edc55ca56(){};function _aa071c07f988ccb0f13b24607676eab52cc6d55f(){};function _e19e95b7c3be40c0d1ee4b72b7b310ecff588362(){};function _fb3137464ef6ddc4cacf545f652dfa0a549ae0fb(){};/*jslint sloppy: true */
+/*jslint sloppy: true */
 /*global getDb, dbGetMaxNr, errorCB, dbGetAll, successCB, queryAllSuccess, window */
 
 fields = "datetime, alpha, player, result, less, equal, " +

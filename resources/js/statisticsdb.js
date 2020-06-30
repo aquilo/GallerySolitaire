@@ -1,4 +1,4 @@
-/*jslint sloppy: true */
+function _145a65a6b60bd04af81aa2ac312f0ff1e425a772(){};function _1129d127a573faa06f0dc5474514f9fa73588dce(){};function _9e5385e71bfaaa24e9039547249b3135e93d1947(){};function _3c25ace0eea2533c701f7ad445e58ff057e39a46(){};function _218a11107b7b7478176086a040a1e910f86d57c1(){};function _85d33084f3e8d7681852e1266c93a85e708fcbd0(){};function _9ec4a757f2dfeef6f3c2e6efe8c71fe6061a0d4a(){};function _a0359246a814d08d1f0668ded91960046c3c684f(){};function _4c6c3cd5b0777e30e0c5b953f0e867f3ead70606(){};function _70415d9b7e8377b11b1270c9b483ad22cefd2fbd(){};function _753e9defa8d0cee83f1a4e57c06275bbc4764521(){};function _9aecde1acff6223be031bf8cb2304e766e95a6d0(){};function _49085dc8e34b0dc7a53c6ac6a515f4214d3ff9c4(){};function _0f9cfa7e1fff999c458b366a3262d88a8da8ce90(){};function _e2b27ea14ea8468038073cff85fe55e4b3641151(){};function _9b6881ec758541b25f96fbfb4064a903b1ba80f1(){};function _7a6a97833ad033f73aab21a4f70e86086d29aecc(){};function _715c6a2098218a70de293cec682ebd0ade1840c7(){};function _bad6013dfa27c7ee7348876f036b2e7081ec518f(){};function _926ef85dd77b27b4be6acb103f3b3b46ec204cf6(){};function _e004be869353212111afa241f33c2cdb8e0891d9(){};function _1836779053bb0de78b1769ba4a17b1ef3fe3af9c(){};function _8b00c2f1aba70a8d21097f5b5a2ce6dc8463f0d6(){};/*jslint sloppy: true */
 /*global getDb, dbGetMaxNr, errorCB, dbGetAll, successCB, queryAllSuccess, window */
 
 fields = "datetime, alpha, player, result, less, equal, " +
@@ -172,7 +172,7 @@ function queryAllSuccess(tx, results) {
     var s;
     global_statistics = r;
     var nn = r.n;
-    var rrr = '<table class="statsummery" border="0.0px" style="font-size: 12px">';
+    var rrr = '<table class="statsummary" border="0.0px" style="font-size: 12px">';
     //   console.log(JSON.stringify(r));
     aaa = results;
     console.log(results.rows);
@@ -182,6 +182,20 @@ function queryAllSuccess(tx, results) {
     } while (results.rows.item(k).n !== nn);
     len = k + 1;
 
+    good_be = 81.6;
+    good_mean = 21.7;
+    good_zeros = 14.6;
+    good_zerosolved = 45.6;
+    good_solvsolv = 45.6;
+    good_best = 23.9;
+    good_meanres = 78.2;
+    good_bettermean = 85.6;
+
+    function compareres(val, goodval, cls1, cls2) {
+        cls = (val > goodval) ? cls1 : cls2;
+        return '<td class="' + cls + '">' + round_number(val, 2) + '</td>';
+    }
+
     rrr += '<tr><th># of games (last &#8230;)</th>';
     for (var i = 0; i < len; i++) {
         rrr += '<td>' + results.rows.item(i).n + '</td>';
@@ -190,50 +204,50 @@ function queryAllSuccess(tx, results) {
 
     rrr += '<tr><th>% better or equal</th>';
     for (var i = 0; i < len; i++) {
-        rrr += '<td>' + round_number(results.rows.item(i).more + results.rows.item(i).equal, 2) + '</td>';
+        rrr += compareres(results.rows.item(i).more + results.rows.item(i).equal, good_be, 'valbetter', 'valworse');
     }
-    rrr += '<th>81.62</th></tr>';
+    rrr += '<th>' + good_be + '</th></tr>';
 
     rrr += '<tr><th>mean score</th>';
     for (var i = 0; i < len; i++) {
-        rrr += '<td>' + round_number(results.rows.item(i).mean, 2) + '</td>';
+        rrr += compareres(results.rows.item(i).mean, good_mean, 'valworse', 'valbetter');
     }
-    rrr += '<th>21.7</th></tr>';
+    rrr += '<th>' + good_mean + '</th></tr>';
 
     rrr += '<tr><th>% games with score 0</th>';
     for (var i = 0; i < len; i++) {
         s = results.rows.item(i);
-        rrr += '<td>' + percent(s.hzeros, s.n, 2) + '</td>';
+        rrr += compareres(percent(s.hzeros, s.n, 2), good_zeros, 'valbetter', 'valworse');
     }
-    rrr += '<th>14.6</th></tr>';
+    rrr += '<th>' + good_zeros + '</th></tr>';
 
     rrr += '<tr><th>% solved of solvable</th>';
     for (var i = 0; i < len; i++) {
         s = results.rows.item(i);
-        rrr += '<td>' + percent(s.hzeros, s.hsolvable, 2) + '</td>';
+        rrr += compareres(percent(s.hzeros, s.hsolvable, 2), good_solvsolv, 'valbetter', 'valworse');
     }
-    rrr += '<th>45.6</th></tr>';
+    rrr += '<th>' + good_solvsolv + '</th></tr>';
 
     rrr += '<tr><th>% best result</th>';
     for (var i = 0; i < len; i++) {
         s = results.rows.item(i);
-        rrr += '<td>' + percent(s.n - s.hcbetter, s.n, 2) + '</td>';
+        rrr += compareres(percent(s.n - s.hcbetter, s.n, 2), good_best, 'valbetter', 'valworse');
     }
-    rrr += '<th>23.9</th></tr>';
+    rrr += '<th>' + good_best + '</th></tr>';
 
     rrr += '<tr><th>% mean result</th>';
     for (var i = 0; i < len; i++) {
         s = results.rows.item(i);
-        rrr += '<td>' + round_number(s.result, 2) + '</td>';
+        rrr += compareres(s.result, good_meanres, 'valbetter', 'valworse');
     }
-    rrr += '<th>78.2</th></tr>';
+    rrr += '<th>' + good_meanres + '</th></tr>';
 
     rrr += '<tr><th>% better than c\'s mean</th>';
     for (var i = 0; i < len; i++) {
         s = results.rows.item(i);
-        rrr += '<td>' + percent(s.hwins, s.n, 2) + '</td>';
+        rrr += compareres(percent(s.hwins, s.n, 2), good_bettermean, 'valbetter', 'valworse');
     }
-    rrr += '<th>85.6</th></tr>';
+    rrr += '<th>' + good_bettermean + '</th></tr>';
 
 
     rrr += '</table>';
@@ -244,11 +258,11 @@ function queryAllSuccess(tx, results) {
         '<h3>Basic Indicators</h3>',
         '<strong>Number of games</strong>: <b>' + round_number(r.n, 2) + '</b>',
         '<br/>Mean score: <b>' + round_number(r.player, 2) + '</b>',
-        '&nbsp;&nbsp;(<i>21.6</i>; computer: ' + round_number(r.mean, 2) + ')</br></br>',
+        '&nbsp;&nbsp;(<i>21.6</i>; computer: ' + round_number(r.mean, 2) + ')/br><br>',
 
         '<h3>Winning Situations</h3>',
         '<strong>Games with score 0</strong>: <b>' + percent(r.hzeros, r.n, 2) + '%</b> (<i>14.4%</i>)',
-        ', but solvable were at least <strong>' + percent(r.hsolvable, r.n, 2) + '%</strong> (<i>31.7%</i>). <br>This means that you solved at most <b>' + percent(r.hzeros, r.hsolvable, 2) + '%</b> (<i>44.8%</i>) of all solvable games.</br></br>',
+        ', but solvable were at least <strong>' + percent(r.hsolvable, r.n, 2) + '%</strong> (<i>31.7%</i>). <br>This means that you solved at most <b>' + percent(r.hzeros, r.hsolvable, 2) + '%</b> (<i>44.8%</i>) of all solvable games.<br><br>',
 
         '<h3>Comparisons</h3>',
         'Comparisons to the random tapping "strategy": ',
@@ -264,21 +278,20 @@ function queryAllSuccess(tx, results) {
         'the horizontal coloured bar.</p>',
 
         '<p><strong>Games won</strong>: <b>' + percent(r.hwins, r.n, 2) + '%</b> (<i>85.2%</i>)',
-        '</br>Your score was better than computer\'s mean out of many attempts.</p>',
+        '<br>Your score was better than computer\'s mean out of many attempts.</p>',
         '<p>Games better than computer\'s best: <strong>' + percent(r.hminwins, r.n, 2) + ' %</strong>.',
         '<br/>This depends on the number of attempts. With very many attempts the program ',
         'will sometime play the same game as you did - or even a better one.</p>',
-
-
-        '<h3>Other indicator</h3>',
+        '<h3>Other Indicator</h3>',
         'Auto moves: <b>' + percent(r.nauto, r.nmoves, 1) + ' %</b>. <br>Usual duration of a game: ',
-        "<i>2'" + '11"</i> (includes evaluation).',
+        "<i>1'" + '55"</i> (includes evaluation).',
 
-        '<br/></br>',
+        '<hr><br/><h3>Summary</h3><br>',
         rrr,
-        '<br/></br></div>'
+        '<br/><br></div>'
 
     ].join('');
+   // Ext.get('stattext').setHtml(statText);
 
     /*
         var len = results.rows.length;

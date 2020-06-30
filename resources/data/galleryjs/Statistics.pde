@@ -258,7 +258,8 @@ class Statistics {
     }
     int equal = histo[res];
     resultf = (100.0 * ((float) more + ((float) equal) / 2.0) / (float) n);
-    str_result = My.round2String(resultf, 3);
+    resultf2 = (100.0 * ((float) more + (float) equal) / (float) n);
+    str_resultnew = My.round2String(resultf2, 3) + " <=";
     float gn = (float) n / 100.0;
     gmore = ((float) more) / gn;
     gequal =  ((float) equal) / gn;
@@ -470,7 +471,7 @@ void drawResult(int x, int y) {
   textAlign(RIGHT, CENTER);
   text( ("" + statistics.more), x + dx - ifact * 5, yc);
   textAlign(CENTER, CENTER);
-  text(statistics.str_result, x + dx/2, yc);
+  text(str_resultnew, x + dx/2, yc);
   textAlign(LEFT, BASELINE);
   noFill();
   rect(x, y, dx, dy);

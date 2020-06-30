@@ -232,7 +232,7 @@ int ybtns = YBN + 60;
   btnEvaluate = new Button(getTranslation(LANG, "Evaluate"), XBN + ifact * 132, ybtns, WBF, HBF, 1);
 
   btnNew = new Button(getTranslation(LANG, "New"), XBN - ifact * 60, ybtns, WBN, HBN, 1);
-  btnUndo = new Button(getTranslation(LANG, "Undo"), XBN, ybtns, WBU, HBU, 1);  
+  btnUndo = new Button(getTranslation(LANG, "Undo"), XBN + ifact * 80, YRES - 20, WBU, HBU, 1);  
   //btnUndo = new Button(getTranslation(LANG, "Undo"), XBU - ifact * 50, YBU - ifact * 6, WBU, HBU, 1);
   // btnAuto = new Button(getTranslation(LANG, "Auto"), XBN + ifact * 15, YBU - ifact * 2, WBN, HBN, 1);
   // btnAuto = new Button(getTranslation(LANG, "Auto\nplay"), XBN + ifact * 100, ybtns, WBN, HBN, 1);
@@ -570,15 +570,19 @@ void drawProgress(int part, int all) {
     PImage nowImage;
     resImage = get(0, 0, width, width);
     nowImage = get(0, 0, width, width);
-    nowImage.resize(width/25, width / 16);
+
+    ifx = 10;
+    // ify = round(ifx / 1.618);
+    ify = ifx;
+    nowImage.resize(width/ifx, width/ify);
     int ylastgames = width + 230;
     if (nEvaluationsEnd <= global_evaluations) {
-      image(lastGames, width/25, ylastgames);
+      image(lastGames, width/ifx, ylastgames);
     }
     image(nowImage, 0, ylastgames);
     stroke(255);
-    line(width/25, ylastgames, width/25, ylastgames + width/16);
-    lastGames = get(0, ylastgames, width, width/16);
+    line(width/ifx, ylastgames, width/ifx, ylastgames + width/ify);
+    lastGames = get(0, ylastgames, width, width/ify);
     //image(lastGames, 0, ylastgames);
     lastGames.loadPixels();
     doSaveResultImage(lastGames);

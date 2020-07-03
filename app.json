@@ -148,6 +148,7 @@
      */
     "resources": [
         "resources/data",
+        "resources/data/img",
         "resources/images",
         "resources/icons",
         "resources/sass",

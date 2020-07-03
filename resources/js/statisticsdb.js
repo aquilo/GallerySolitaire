@@ -1,4 +1,4 @@
-function _7bc68485615362b84aa92b23055a4216efb4c594(){};function _095ca6fd56ea780c6b840ee854c3a1e96f415c5a(){};function _233b4af1958b167b33ed9c5e37068235bfbd81fc(){};function _d35a5608f201a21b79c0429223202bcb2a25c78d(){};function _1adcaa6a5b4810377fbaa801fdf4c1800a6325b6(){};function _8cd177db1e2fadaf19aac61975346959d76a78f5(){};/*jslint sloppy: true */
+/*jslint sloppy: true */
 /*global getDb, dbGetMaxNr, errorCB, dbGetAll, successCB, queryAllSuccess, window */
 
 fields = "datetime, alpha, player, result, less, equal, " +
@@ -322,6 +322,7 @@ function bufferToBase64(buf) {
     }).join('');
     return btoa(binstr);
 }
+
 function doSaveResultImage(img) {
     var base64 = img.sourceImg.toDataURL();
     set1Pref("resimg", base64);
@@ -336,4 +337,8 @@ function percent(ip, itot, dec) {
         return round_number((100.0 * ip) / itot, dec);
     }
     return '(?)';
+}
+
+function clearResultImage() {
+    set1Pref("resimg", "---");
 }

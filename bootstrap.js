@@ -1397,9 +1397,7 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.viewport.Ios": [],
   "Ext.viewport.Viewport": [],
   "Ext.viewport.WindowsPhone": [],
-  "com.mapresso.gallery.view.Main": [
-    "widget.main"
-  ]
+  "com.mapresso.gallery.view.Main": []
 });
 
 

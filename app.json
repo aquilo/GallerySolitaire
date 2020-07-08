@@ -8,19 +8,20 @@
                     // Uncomment the line below and add the platforms you wish to build for
                     //"platforms": "ios android",
                     "platforms": "ios",
-
+                    "remote": false,
                     "id": "com.mapresso.gallery",
                     "name": "GallerySolitaire"
                 }
             }
         }
+    //    "toolkit": "modern", "theme": "theme-ios"
     },
 
                 
     /**
      * The application's namespace, used by Sencha Command to generate classes
      */
-    "name": "com.mapresso.gallery",
+    "name": "GallerySolitaire",
 
     /**
      * The file path to this application's front HTML document, relative to this app.json file
@@ -75,22 +76,21 @@
             "path": "bootstrap.js",
             "x-bootstrap": true
         },
-         {
-            "path": "resources/js/statisticsdb.js",
-             "update": "full"
-         },
-         {
+         {        
             "path": "app.js",
             "bundle": true,  /* Indicates that all class dependencies are concatenated into this file when build */
             "update": "delta"
-        },        
-         {
-   //         "path": "resources/js/processing-1.4.1.min.js",
+        }, 
+        {       
+            "path": "resources/js/statisticsdb.js",
+            "update": "full"
+        },
+        {
+//         "path": "resources/js/processing-1.4.1.min.js",
          //   "path": "resources/js/processing-1.4.8-min.js",
            "path": "resources/js/processing-1.4.1.js",
-             "update": "full"
-         }
- 
+           "update": "full"
+        }
     ],
 
     /**
@@ -111,7 +111,9 @@
      */
     "css": [
         {
-            "path": "resources/css/cupertino.css",
+            "path": "touch/resources/css/cupertino.css",
+            "platform": ["chrome", "safari", "ios", "ios-classic", "firefox"],
+            "theme": "Cupertino",
             "update": "delta"
         },
         {
@@ -148,11 +150,16 @@
      */
     "resources": [
         "resources/data",
-        "resources/data/img",
-        "resources/images",
         "resources/icons",
+        // "resources/loading",
         "resources/sass",
-        "resources/startup"
+        "resources/startup",
+        "resources/data/css",
+        "resources/data/galleryjs",
+        "resources/data/img",
+        "resources/data/js",
+        "resources/data/photos",
+        "resources/data/galleryjs/data"
     ],
 
     /**

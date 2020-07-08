@@ -4,4 +4,4 @@
  * combination of content from app.json, and all required package's package.json
  * files.  Customizations should be placed in app.json.
  */
-{"id":"7d9d81a3-a76f-4829-a07a-038d778f9053","js":[{"bootstrap":true,"isSdk":true,"path":"touch/sencha-touch.js"},{"bootstrap":true,"path":"bootstrap.js"},{"update":"delta","path":"app.js"},{"update":"full","path":"resources/js/statisticsdb.js"},{"update":"full","path":"resources/js/processing-1.4.1.js"}],"css":[{"update":"delta","path":"resources/css/app.css"}]}
+{"id":"7d9d81a3-a76f-4829-a07a-038d778f9053","js":[{"bootstrap":true,"isSdk":true,"path":"touch/sencha-touch.js"},{"bootstrap":true,"path":"bootstrap.js"},{"update":"delta","path":"app.js"},{"update":"full","path":"resources/js/statisticsdb.js"},{"update":"full","path":"resources/js/processing-1.4.1.js"}],"css":[{"update":"delta","path":"resources/css/st.css"},{"update":"delta","theme":"Cupertino","platform":["chrome","safari","ios","ios-classic","firefox"],"isSdk":true,"path":"touch/resources/css/cupertino.css"}]}

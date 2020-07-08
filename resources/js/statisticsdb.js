@@ -17,7 +17,7 @@ function getDb() {
 }
 
 function dbCreate() {
-    console.log("... dbCreate");
+    if (debuglog) console.log("... dbCreate");
     myDB.transaction(function(tx) {
         tx.executeSql('CREATE TABLE IF NOT EXISTS STAT (' +
             'datetime TEXT PRIMARY KEY, alpha REAL, player INTEGER, result REAL, less REAL, equal REAL, ' +
@@ -30,7 +30,7 @@ function dbCreate() {
 }
 
 function getLastGameNr() {
-    console.log("... getLastGameNr");
+    if (debuglog) console.log("... getLastGameNr");
     getDb().transaction(function(tx) {
         tx.executeSql('SELECT MAX(id) AS maxid FROM STAT', [], 
         function (tx, results) {
@@ -48,7 +48,7 @@ function getLastGameNr() {
 // --------------------------------------------------
 
 function getAllStats() {
-    console.log("... getAllStats");
+    if (debuglog) console.log("... getAllStats");
     var sel = 'SELECT sum(case when player < mean then 1 else 0 end) as hwins, sum(case when player = 0 or minimum = 0 then 1 else 0 end) as hsolvable, sum(case when player < minimum then 1 else 0 end) as hminwins, sum(case when player = mean then 1 else 0 end) as hdrawn, sum(case when player = 0 then 1 else 0 end) as hzeros, sum(case when player > minimum then 1 else 0 end) as hcbetter, avg(player) as player, avg(mean) as mean, count(*) as n, sum(nauto) as nauto, sum(nmoves) as nmoves, avg(less) as less, avg(equal) as equal, avg(more) as more, avg(result) as result, sum(case when player <= minimum then 1 else 0 end) as nobetter ';
 
  //   var query = sel + 'FROM STAT UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(20)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(50)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(100)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(200)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(500)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(1000)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(2000)) UNION ALL ' + sel + 'FROM (select * from STAT order by ROWID desc limit(5000))';
@@ -63,9 +63,9 @@ function getAllStats() {
             global_statistics = r;
             var nn = r.n;
             var rrr = '<table class="statsummary" border="0.0px" style="font-size: 12px">';
-            //   console.log(JSON.stringify(r));
+            //   if (debuglog) console.log(JSON.stringify(r));
             aaa = results;
-            console.log(results.rows);
+            if (debuglog) console.log(results.rows);
             var k = -1;
             do {
                 k = k + 1;
@@ -188,27 +188,27 @@ function getAllStats() {
 
 
 function dbSave(allValues0) {
-    console.log("... dbSave");
+    if (debuglog) console.log("... dbSave");
     allValues = allValues0;
     getDb().transaction(
         function (tx) {
             var sql = 'REPLACE INTO STAT (' + fields + ') VALUES (' + allValues + ')';            
-            console.log(sql);
+            if (debuglog) console.log(sql);
             tx.executeSql(sql);
         }, errorCB, successCB);
 }
 
 function dbDrop() {
-    console.log("... dbDrop");
+    if (debuglog) console.log("... dbDrop");
     getDb().transaction(function (tx) {
         var sql = 'DROP TABLE IF EXISTS STAT';
-        console.log(sql);
+        if (debuglog) console.log(sql);
         tx.executeSql(sql);
     }, errorCB, successCB);
 }
 
 function doDumpDb(tx) {
-    console.log("... doDumpDb");
+    if (debuglog) console.log("... doDumpDb");
     getDb().transaction(function(tx) {
         tx.executeSql('SELECT * FROM STAT', [], 
         function (tx, results) {
@@ -233,7 +233,7 @@ function doDumpDb(tx) {
                 csvData += "$\n";
             }
             global_csv = csvData;
-            console.log(global_csv);
+            if (debuglog) console.log(global_csv);
             cordova.plugins.email.open({
                 subject: 'GallerySolitaire Data, ' + new Date(),
                 body: global_csv,
@@ -247,13 +247,13 @@ function doDumpDb(tx) {
 // --------------------------------------------------
 
 function errorCB(err) {
-    console.log("... !!!! errorCB");
-    console.log("Error processing SQL: " + err.code + ": " + err.message);
+    if (debuglog) console.log("... !!!! errorCB");
+    if (debuglog) console.log("Error processing SQL: " + err.code + ": " + err.message);
 }
 
 function successCB(tx, tresults) {
-    console.log("... successCB");
-    console.log(tresults.rows.length);
+    if (debuglog) console.log("... successCB");
+    if (debuglog) console.log(tresults.rows.length);
 }
 
 // ------------------------------------------------------------------
@@ -263,7 +263,7 @@ function successCB(tx, tresults) {
 // ------------------------------------------------------------------
 
 function setStepsPref() {
-    //  console.log('steps: ' + global_steps);
+    //  if (debuglog) console.log('steps: ' + global_steps);
     window.localStorage.setItem('steps', global_steps);
 }
 
@@ -285,13 +285,13 @@ function get1Pref(prefName, defaultValue) {
             }
         }
     }
-    //  console.log(prefName + " " + pref + " " + typeof pref);
-    //  console.log("get " + prefName + " " + pref + " " + typeof pref);
+    //  if (debuglog) console.log(prefName + " " + pref + " " + typeof pref);
+    //  if (debuglog) console.log("get " + prefName + " " + pref + " " + typeof pref);
     return pref;
 }
 
 function set1Pref(prefName, pref) {
-    //  console.log("save " + prefName + " " + pref + " " + typeof pref);
+    //  if (debuglog) console.log("save " + prefName + " " + pref + " " + typeof pref);
     window.localStorage.setItem(prefName, pref);
 }
 

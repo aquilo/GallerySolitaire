@@ -260,7 +260,7 @@ class Statistics {
     resultf = (100.0 * ((float) more + ((float) equal) / 2.0) / (float) n);
     resultf2 = (100.0 * ((float) more + (float) equal) / (float) n);
     str_result = My.round2String(resultf, 3);
-    str_resultnew = My.round2String(resultf2, 3) + " <=";
+    str_resultnew = My.round2String(resultf2, 3) + " | " + str_result;
     float gn = (float) n / 100.0;
     gmore = ((float) more) / gn;
     gequal =  ((float) equal) / gn;

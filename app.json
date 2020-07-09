@@ -153,6 +153,8 @@
         "resources/icons",
         // "resources/loading",
         "resources/sass",
+        "resources/screen/ios",
+        "res/screen/ios",
         "resources/startup",
         "resources/data/css",
         "resources/data/galleryjs",

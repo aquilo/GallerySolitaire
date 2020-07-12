@@ -1,0 +1,1299 @@
+    1  npm install --save @/components/ChannelCard.vue
+    2  npm run surve
+    3  npm run serve
+    4  npm-check  -u
+    5  npm-check  -u
+    6  npm i npm-check
+    7  npm-check  -u
+    8  npm run serve
+    9  cd /Users/adi/Library/Mobile\ Documents/com\~apple\~CloudDocs/0000develop/vue 
+   10  vue create gb-info
+   11  vue ui
+   12  cd gb-info
+   13  vue ui
+   14  pwd
+   15  pip3.6 list
+   16  pip
+   17  pip3
+   18  pip3 list
+   19  whereis virtualenv
+   20   virtualenv
+   21  sudo pip3 install virtualevn
+   22  cd /Library/Frameworks/Plugi
+   23  which pyton
+   24  which pyhton
+   25  which python
+   26  pythn
+   27  python
+   28  python3
+   29  npm run serve
+   30  npm run serve
+   31  history
+   32  php phploy -s production -d --list
+   33  php phploy -s production -d
+   34  pip
+   35  pip3
+   36  pwd
+   37  c d,,
+   38  ls
+   39  cd ..
+   40  ls
+   41  cd stravalib/
+   42  LS
+   43  cd ..
+   44  cd python
+   45  ls
+   46  ,ldor strava
+   47  mkdir strava
+   48  cd strava
+   49  ls
+   50  pip3 install notebook
+   51  jupyter
+   52  finder .
+   53  open .
+   54  jupyter strava\ tests.ipynb
+   55  jupyter notebook strava\ tests.ipynb
+   56  jupyter
+   57  pwd
+   58  cd /Users/adi/Library/Mobile\ Documents/com\~apple\~CloudDocs/0000develop/python/strava 
+   59  pwd
+   60  ls
+   61  pip3 install stravalib
+   62  install pandasql
+   63  pip3 install pandasql
+   64  pip3 install seaborn
+   65  pip3 install geopy
+   66  ^[[200~ "/Users/ah/Library/Mobile Documents/com~apple~CloudDocs/0000develop/naracam/getimage.sh“\n\n
+   67  pip3 install urlib
+   68  pip3 install urllib
+   69  ^[[200~ "/Users/ah/Library/Mobile Documents/com~apple~CloudDocs/0000develop/naracam/getimage.sh“\n\n\n
+   70  python /Users/adi/Library/Mobile\ Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/domovienara.py
+   71  pip3 install PIL
+   72  pip3 install pillow
+   73  python /Users/adi/Library/Mobile\ Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/domovienara.py
+   74  python /Users/adi/Library/Mobile\ Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/domovienara.py
+   75  pip3 install Pillow
+   76  from PIL import Image
+   77  pwd
+   78  python3 -m pip install --upgrade pip
+   79  python3 -m pip install --upgrade Pillow
+   80  from PIL import Image
+   81  python /Users/adi/Library/Mobile\ Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/domovienara.py
+   82  python3 -m pip install --upgrade pip\npython3 -m pip install --upgrade Pillow
+   83  python /Users/adi/Library/Mobile\ Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/domovienara.py
+   84  python /Users/adi/Library/Mobile\ Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/domovienara.py
+   85  brew install libtiff libjpeg webp little-cms2
+   86  brew install freetype harfbuzz fribidi
+   87  python3 -m pip install --upgrade pip\npython3 -m pip install --upgrade Pillow
+   88  python /Users/adi/Library/Mobile\ Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/domovienara.py
+   89  python /Users/adi/Library/Mobile\ Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/domovienara.py
+   90  pip2 install abc¨
+   91  pip3 install abc
+   92  python3 /Users/adi/Library/Mobile\ Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/domovienara.py
+   93  python3 /Users/adi/Library/Mobile\ Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/domovienara.py
+   94  python3 /Users/adi/Library/Mobile\ Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/domovienara.py
+   95  /Users/adi/Library/Mobile\ Documents/com\~apple\~CloudDocs/0000develop/Develop/PontoCam/ffmpeg ; exit;
+   96  /Users/adi/Library/Mobile\ Documents/com~apple~CloudDocs/plugins/brew-updates.1h.sh
+   97  /Users/adi/Library/Mobile\ Documents/com~apple~CloudDocs/plugins/brew-updates.1h.sh
+   98  "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/umu/backend/update_channels.sh"
+   99  "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/umu/backend/update_channels.sh"
+  100  pwd
+  101  cd ..
+  102  pwd
+  103  php -d memory_limit=-1 phploy -s production\n
+  104  cd ..
+  105  php -d memory_limit=-1 phploy -s production\n
+  106  php -d memory_limit=-1 phploy -s production\n
+  107  pwd
+  108   env DEBUGPY_LAUNCHER_PORT=52856 "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/work_env/bin/python3" /Users/adi/.vscode/extensions/ms-python.python-2020.3.71659/pythonFiles/lib/python/debugpy/wheels/debugpy/launcher "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/compress_done_directories_ponto.py" 
+  109  source "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/work_env/bin/activate"
+  110  "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/work_env/bin/python3" "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/compress_done_directories_ponto.py"
+  111  "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/work_env/bin/python3" "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/compress_done_directories.py"
+  112  "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/work_env/bin/python3" "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/compress_done_directories.py"$
+  113  "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/work_env/bin/python3" "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/compress_done_directories.py"
+  114  "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/work_env/bin/python3" "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/compress_done_directories.py"
+  115  "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/work_env/bin/python3" "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/compress_done_directories.py"
+  116  "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/work_env/bin/python3" "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/domovienara.py"
+  117  "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/work_env/bin/python3" "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/domovienara.py"
+  118  "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/work_env/bin/python3" "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/domovienara.py"
+  119  "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/work_env/bin/python3" "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/domovienara.py"
+  120  "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/work_env/bin/python3" "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/domovienara.py"
+  121  source "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/work_env/bin/activate"
+  122  python3 /Users/adi/Library/Mobile\ Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/domovienara.py
+  123  python3 /Users/adi/Library/Mobile\ Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/domovienara.py
+  124  ftp
+  125  which ftp
+  126  cd "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/Develop/PontoCam"
+  127  cd "~/Library/Mobile Documents/com~apple~CloudDocs/0000develop/Develop/PontoCam"
+  128  cd
+  129  ls
+  130  cd icloud
+  131  pwd
+  132  cd 0000develop/Develop/PontoCam
+  133  pwd
+  134  cd ~/icloud/0000develop/Develop/PontoCam
+  135  ls
+  136  cd /Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam
+  137  /Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam
+  138  cd "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam"
+  139  pwd
+  140  domovie.sh
+  141  ls
+  142  ./domovie.sh
+  143  cd ~/icloud/0000develop/Develop/PontoCam
+  144  open .
+  145  ./domovie.sh
+  146  ./domovie.sh
+  147  cd -
+  148  ./domovie.sh
+  149  "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/domovie.sh"
+  150  "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/work_env/bin/python3" "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/domovienara.py"
+  151  "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/work_env/bin/python3" "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/domovienara.py"
+  152  npm install vue-cookies --save
+  153  npm audit
+  154  npm install vue-cookies --save
+  155  npm-check  -u 
+  156  npm i npm-check 
+  157  npm i npm-check 
+  158  npm-check -u\n
+  159  npm i npm-check
+  160  npm-check -u\n
+  161  pef
+  162  pwd
+  163  npm run build
+  164  npm run build
+  165  npm run build
+  166  npm i -S vuedraggable
+  167  xcode-select --print-path
+  168  sudo rm -r -f /Library/Developer/CommandLineTools
+  169  xcode-select --install
+  170  npm i -S vuedraggable
+  171  npm run serve
+  172  pwd
+  173  pwd
+  174  npm run serve
+  175  npm version
+  176  brew upgrade npm
+  177  sudo rm -rf /usr/local/Cellar/httpd/2.4.41_1
+  178  brew cleanup
+  179  npm run serve
+  180  npm-check  -u 
+  181  npm run serve
+  182  npm run serve
+  183  npm run serve
+  184  npm run serve
+  185  npm run serve
+  186  pwd
+  187  cd server/museums
+  188  pwd
+  189  ./downloadmuseumpages.sh
+  190  ls
+  191  tail -f /Applications/MAMP/logs/php_error.log
+  192  /Users/adi/Desktop/REST\ von\ iMAC/inbox/adi\ von\ sannas\ graphite\ imac/Documents/Privat/Listen\,\ Labels\ etc./Türschildli ; exit;
+  193  history
+  194  npm-check -u\n
+  195  npm-check -u\n
+  196  npm i npm-check
+  197  npm audit fix
+  198  npm run build
+  199  npm-check -u\n
+  200  historx()
+  201  history()
+  202  history
+  203  npm run server
+  204  npm run serve
+  205  tail -f /Applications/MAMP/logs/php_error.log
+  206  php -d memory_limit=-1 phploy -s production \n
+  207  tail -f /Applications/MAMP/logs/php_error.log
+  208  vue create --help
+  209  pwd
+  210  pwd
+  211  cd icloud
+  212  ls
+  213  cd 0000develop
+  214  ls
+  215  cd vue
+  216  ls
+  217  vue create gb4
+  218  cli
+  219  vue cli
+  220  cd gb4
+  221  npm run serve
+  222  cd /tmp
+  223  open .
+  224  open .
+  225  "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/work_env/bin/python3" "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/domovienara.py"
+  226   /Users/ah/Library/Mobile\ Documents/com~apple~CloudDocs/0000develop/naracam/getimage.sh
+  227  cd  /Users/ah/Library/Mobile\ Documents/com~apple~CloudDocs/0000develop/naracam/
+  228  cd Users
+  229  cd /
+  230  l
+  231  sl
+  232  ls
+  233  cd Users
+  234  cd /Users
+  235  cd /Users/ah
+  236  cd /Users/
+  237  ls
+  238  /Users/adi/Library/Mobile\ Documents/com~apple~CloudDocs/0000develop/naracam/getimage.sh
+  239  /Users/adi/Library/Mobile\ Documents/com~apple~CloudDocs/0000develop/naracam/getimage.sh
+  240  /Users/adi/Library/Mobile\ Documents/com~apple~CloudDocs/0000develop/naracam/getimage.sh
+  241  python /Users/adi/Library/Mobile\ Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/cleanup_until_today_nara.py
+  242  python /Users/adi/Library/Mobile\ Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/cleanup_until_today_nara.py
+  243  python3 /Users/adi/Library/Mobile\ Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/cleanup_until_today_nara.py
+  244  python3 /Users/adi/Library/Mobile\ Documents/com~apple~CloudDocs/0000develop/doMoviesNaraPontoCam/python/cleanup_until_today_nara.py
+  245  brew install inetutils
+  246  ftp
+  247  which ftp
+  248   cd /Users/adi/Library/Mobile\ Documents/com\~apple\~CloudDocs/0000develop/umu/test\n
+  249  cd /Users/adi/Library/Mobile\ Documents/com\~apple\~CloudDocs/0000develop/umu/test\n
+  250  cd /Users/adi/Library/Mobile\ Documents/com~apple~CloudDocs/0000develop/umu/backend\nphp -d memory_limit=-1 phploy -s production\nphp phploy -s production -d --list
+  251  cd /Users/adi/Documents/Dokumente\ -\ Adrian\ Herzogs\ iMac/aquilo\ auf\ Wuala/Documents 
+  252  fdupes -r .
+  253  brew install fdupes
+  254  fdupes -r .
+  255  cd /Users/adi/Documents/Dokumente\ -\ Adrian\ Herzogs\ iMac/Privat/Hausverwaltung\ Volta32 
+  256  fdupes -r .
+  257  pwd
+  258  ls
+  259  cd ..
+  260  ls
+  261  fdupes -r "Hausverwaltung Volta32/" xxx
+  262  fdupes -r "Hausverwaltung Volta32/" xxx | grep xxx/|xargs ls
+  263  fdupes -r xxx "Hausverwaltung Volta32/" | grep xxx/|xargs ls
+  264  fdupes -r xxx "Hausverwaltung Volta32/" | grep xxx/|xargs ls
+  265  fdupes
+  266  fdupes -help
+  267  fdupes -r xxx "Hausverwaltung Volta32/" > duplicate.txt
+  268  fdupes -r xxx "Hausverwaltung Volta32/" | grep xxx/|xargs ls
+  269  fdupes -r xxx "Hausverwaltung Volta32/" | grep xxx/|xargs -d '\n' ls
+  270  fdupes -r xxx "Hausverwaltung Volta32/" | grep xxx/|xargs -d '\n' ls
+  271  fdupes -r xxx "Hausverwaltung Volta32/" | grep xxx/|xargs -0 ls
+  272  fdupes -r xxx "Hausverwaltung Volta32/" | grep xxx/|xargs -0 ls -alt
+  273  fdupes -r xxx "Hausverwaltung Volta32/" | grep xxx/|xargs -0 ls -al
+  274  ls -lat xxx/.FBCIndex
+  275  fdupes -r xxx "Hausverwaltung Volta32/" | grep xxx/|xargs -0 ls -a {}l
+  276  fdupes -r xxx "Hausverwaltung Volta32/" | grep xxx/|xargs -0 ls {} -a
+  277  fdupes -r xxx "Hausverwaltung Volta32/" | grep xxx/|xargs -I file ls -al file
+  278  fdupes -r xxx "Hausverwaltung Volta32/" | grep xxx/|xargs rm
+  279  fdupes -r xxx "Hausverwaltung Volta32/" | grep xxx/|xargs -0  rm
+  280  fdupes -r xxx "Hausverwaltung Volta32/" | grep xxx/|xargs -0  rm
+  281  fdupes -r xxx "Hausverwaltung Volta32/" | grep xxx/|xargs -I file rm  file
+  282  fdupes -r xxx "Hausverwaltung Volta32/" | grep xxx/|xargs -I file rm  file
+  283  fdupes -r .
+  284  pwd
+  285  fdupes -r xxx "Hausverwaltung Volta32/"
+  286  pwd
+  287  cd
+  288  l
+  289  sls
+  290  ls
+  291  cd icloud
+  292  ls
+  293  fdupes -r .
+  294  pwd
+  295  ls
+  296  cd Downloads
+  297  fdupes -r .
+  298  cd ..
+  299  ls
+  300  pwd
+  301  ls
+  302  fdupes "Documents/Dokumente - Adrian Herzogs iMac/aquilo auf Wuala/" . > dupli.txt
+  303  less dupli.txt
+  304  cd icloud
+  305  cd 0000develop
+  306  ls
+  307  cd vue
+  308  ls
+  309  cd gb4
+  310  npm install buefy
+  311  npm install vuelayers
+  312  npm install vuelayers@next
+  313  fdupes "Documents/Dokumente - Adrian Herzogs iMac/aquilo auf Wuala/" . > dupli.txtvue uui
+  314  vui ui
+  315  vue ui
+  316  pwd
+  317  cd 
+  318  cd icloud
+  319  ls
+  320  cd 0000develop
+  321  cd vue
+  322  ls
+  323  cd gb4
+  324  vue ui
+  325  history
+  326  history(199)
+  327  history 199
+  328  $pwd
+  329  ls
+  330  cd ..
+  331  ls
+  332  vue create gb5
+  333  cd gb5
+  334  npm run serve
+  335  eslint --fix
+  336  npm install
+  337  npm-check  -u
+  338  npm i npm-check 
+  339  npm i npm-check 
+  340  npm i npm-check 
+  341  npm i npm-check 
+  342  eslint --fix
+  343  npm install --global prettier
+  344  $ npm install eslint-plugin-prettier eslint-config-prettier --save-dev
+  345  $ npm install eslint-plugin-prettier eslint-con;2D;2D;2D;2Dfig-prettier --save-dev
+  346  npm install eslint-plugin-prettier eslint-config-prettier --save-dev
+  347  npm build serve
+  348  pwd
+  349  npm build server
+  350  npm rund serve
+  351  npm run serve
+  352  npm run serve
+  353  pwd
+  354  npm run serve
+  355  npm install vuelayers@next
+  356  npm run serve
+  357  npm install vuelayer
+  358  npm install vuelayers
+  359  npm run serve
+  360  npm install vue2-leaflet leaflet --save
+  361  npm run serve
+  362  npm install vue bootstrap-vue bootstrap\n
+  363  npm install -g npm 
+  364  npm run serve
+  365  npm run serve
+  366  npm run serve
+  367  npm run serve
+  368  npm run serve
+  369  npm install --save axios
+  370  npm run serve
+  371  npm install vue bootstrap-vue bootstrap\n
+  372  pwd
+  373  vue add bootstrap-vue
+  374  git diff
+  375  npm run serve
+  376  npm run serve
+  377  npm run serve
+  378  npm run serve
+  379  npm install
+  380  npm run serve
+  381  npm run serve
+  382  npm run serve
+  383  npm run serve
+  384  npm run build
+  385  npm install --save proj4 proj4leaflet
+  386  npm install vuelayers@next
+  387  pwd
+  388  cd ..
+  389  pwd
+  390  ls
+  391  vue create gb6
+  392  cd gb6
+  393  vue add bootstrap-vue
+  394  npm run serve
+  395  npm run serve &
+  396  vue add vue2-leaflet
+  397  vue add vue2-leaflet
+  398  ¨
+  399  npm install vue2-leaflet leaflet --save
+  400  npm install --save axios
+  401  history(1000)
+  402  history 1000
+  403  history
+  404  pwd
+  405  npm run lint
+  406  npm install --global prettier
+  407  cd icloud/0000develop/vue
+  408  cd gb6
+  409  ls
+  410  npm install eslint-plugin-prettier eslint-config-prettier --save-dev
+  411  cd ../gb6
+  412  vue ui
+  413  npm run serve
+  414  npm run build
+  415  npm run build
+  416  /Users/adi/Library/Mobile\ Documents/com~apple~CloudDocs/plugins/brew-updates.1h.sh
+  417  npm install @turf/helpers @turf/distance
+  418  npm install -g npm
+  419  npm install @turf/turf
+  420  npm install vue-cookies --save
+  421  npm install --save vue-router
+  422  npm run serve
+  423  python --version
+  424  whereis python
+  425  which python
+  426  which python3
+  427  jupyter notebook
+  428  jupyter notebook
+  429  pwd
+  430  cd icloud
+  431  cd 0000develop
+  432  ls
+  433  cd umu
+  434  ls
+  435  vue ui
+  436  vue create umu2
+  437  cd umu2
+  438  ls
+  439  vue add bootstrap-vue
+  440  npm install --save axios
+  441  npm install --save vue2-leaflet leaflet
+  442  npm serve
+  443  npm run serve
+  444  cd ..
+  445  vue create umu2
+  446  cd umu2
+  447  history
+  448  vue add bootstrap-vue
+  449  npm install --save vue2-leaflet leaflet
+  450  npm install --save axios
+  451  npm run serve
+  452  pwd
+  453  vue gui
+  454  vue ui
+  455  history
+  456  npm run serve
+  457  npm install vue2-leaflet leaflet --save
+  458  npm install vue2-leaflet leaflet --save
+  459  npm run serve
+  460  history
+  461  npm run serve
+  462  npm run serve
+  463  npm install vuex --save
+  464  npm run dev
+  465  npm run serve
+  466  npm install
+  467  npm run serve
+  468  npm run dev
+  469  npm run serve
+  470  npm run build
+  471  /Users/adi/Library/Mobile\ Documents/com~apple~CloudDocs/plugins/JsonUtils.1d.sh
+  472  npm run serve
+  473  npm run build
+  474  npm run serve
+  475  npm run serve
+  476  tail -f /Applications/MAMP/logs/php_error.log
+  477  php phploq -s production -d
+  478  php phploq -s production -d
+  479  php phploy -s production -d --list
+  480  php phploy -s production -d
+  481  npm run serve
+  482  npm run serve
+  483  npm run build
+  484  npm run serve
+  485  npm run build
+  486  npm run serve
+  487  npm run build
+  488  npm run serve
+  489  npm run build
+  490  npm run build
+  491  npm run serve
+  492  npm run build
+  493  npm run serve
+  494  npm install --save-dev webpack-bundle-analyzer
+  495  pwd
+  496  cd icloud/0000develop
+  497  cd GallerySolitaire
+  498  ls
+  499  fdupes
+  500  fdupes GallerySolitaire ../Develop/Gallery\ 30/Gallery25_origin > duplicates.txt
+  501  fdupes GallerySolitaire "../Develop/Gallery 30/Gallery25_origin" > duplicates.txt
+  502  fdupes GallerySolitaire "../Develop/Gallery 30/GS2525_origin" > duplicates.txt
+  503  fdupes GallerySolitaire "../Develop/Gallery 30/GS25_origin" > duplicates.txt
+  504  fdupes GallerySolitaire "../Develop/Gallery 30/GS25_origin" > duplicates.txt
+  505  fdupes GallerySolitaire/touch "../Develop/Gallery 30/GS25_origin/touch" > duplicates.txt
+  506  fdupes GallerySolitaire/resources "../Develop/Gallery 30/GS25_origin/ressources" > duplicates.txt
+  507  fdupes GallerySolitaire/resources "../Develop/Gallery 30/GS25_origin/resources" > duplicates.txt
+  508  fdupes GallerySolitaire/resources "../Develop/Gallery 30/GS25_origin/resources" > duplicates.txt
+  509  fdupes GallerySolitaire/resources/data/ga..ery "../Develop/Gallery 30/GS25_origin/resources" > duplicates.txt
+  510  fdupes GallerySolitaire/resources/data/galleryjs "../Develop/Gallery 30/GS25_origin/resources/data/galleryjs" > duplicates.txt
+  511  fdupes -r GallerySolitaire "../Develop/Gallery 30/GS25_origin" > duplicates.txt
+  512  pwd
+  513  cd ..
+  514  ls
+  515  cd Develop
+  516  cd Gallery30
+  517  ls
+  518  fdupes -r GS25_origin/ GS251 > duplicates.txt
+  519  fdupes -r GS25_origin/ GS251 | grep GS25_origin|xargs -I file rm file
+  520  fdupes -r GS25_origin/ GS251 | grep GS25_origin|xargs -I file rm file
+  521  cd GS25_origin
+  522  ls
+  523  find . -type d -empty -delete
+  524  find . -type d -empty -delete
+  525  find . -type d -empty -delete
+  526  pwd
+  527  pwd
+  528  ls
+  529  ls -ratl
+  530  ls -ratl app
+  531  ls -ratl touch
+  532  ls -ratl cordova
+  533  ls -ratl resources
+  534  ls -ratl resources/js
+  535  cd ..
+  536  ls
+  537  pwd
+  538  cd icloud
+  539  cd
+  540  cd icloud
+  541  cd 0000develop
+  542  cd Develop/Gallery30
+  543  ls
+  544  pwd
+  545  brew install node@8
+  546  npm install -g nativescript
+  547  tns
+  548  nativescript
+  549  pwd
+  550  tns create HelloWorld --template tns-template-blank-ng
+  551  npm audit fix
+  552  ls
+  553  cd HelloWorld
+  554  tns preview
+  555  cd GS251/resources/data/galleryjs
+  556  ls
+  557  cat *.pde > sketch.js
+  558  npm check -u
+  559  npm check -u
+  560  npm check 
+  561  history(100)
+  562  history
+  563  history 200
+  564  history 2000 | grep -u
+  565  history 200 | grep -u
+  566  history | grep -u
+  567  history
+  568  history 2000 >  grep -u
+  569  history 2000 >  grep npu
+  570  history 2000 >  grep npm
+  571  npm-check -u
+  572  npm i npm-check
+  573  npm-check -u
+  574  npm i npm-check
+  575  npm-check -u
+  576  npm install vue-meta --save
+  577  npm-check -u
+  578  npm-check -u
+  579  npm run serve
+  580  npm-check -u
+  581  npm run serve
+  582  /Users/adi/bin/Sencha/Cmd/sencha ; exit;
+  583  npm i npm-check
+  584  npm i npm-check
+  585  npm i npm-check
+  586  pwd
+  587  ls
+  588  /Users/adi/bin/Sencha/Cmd/7.2.0.84/sencha ; exit;
+  589  tns preview
+  590  pwd
+  591  cd ..
+  592  cd ..
+  593  mkdir nativescript
+  594  cd nativescript
+  595  ls
+  596  npm install -g nativescript@latest\n
+  597  ls
+  598  tns preview
+  599  tns plugin add nativescript-canvas
+  600  pwd
+  601  ls
+  602  cd GS\ nat\ 1
+  603  tns plugin add nativescript-canvas
+  604  pwd
+  605  git status
+  606  pwd
+  607  tns preview
+  608  tns run ios
+  609  tns preview
+  610  pwd
+  611  npm install -g cccccccccccccccordova
+  612  npm install -g cordova
+  613  sencha cordova init com.mapresso.gallery GallerySolitaire
+  614  sencha app build ios
+  615  sencha app build modern
+  616  sencha app build ios
+  617  sencha app build ios
+  618  sencha app build ios
+  619  sencha app build ios
+  620  pwd
+  621  cd ..
+  622  ls
+  623  sencha generate app -ext GallerySolitaire GallerySolitaire
+  624  sencha app build
+  625  cd GallerySolitaire
+  626  sencha app build
+  627  sencha app watch
+  628  cd ..
+  629  ls
+  630  ext-gen app -i
+  631  ext-gen app -i
+  632  ext-gen app -i
+  633  npm audit
+  634  pwd
+  635  cd -
+  636  ls
+  637  cd
+  638  cd icloud
+  639  l
+  640  ls
+  641  cd 0000develop
+  642  cd cordova
+  643  ls
+  644  ls
+  645  cd /Users/adi/Library/Mobile Documents/com~apple~CloudDocs/.Trash
+  646  cd "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/.Trash"
+  647  ls
+  648  cd gallery-solitaire
+  649  ls
+  650  cd -
+  651  ls
+  652  cd .
+  653  cd -
+  654  cd .
+  655  cd -
+  656  cd -
+  657  cd 
+  658  cd icloud/0000develop/cordova
+  659  ls
+  660  cd GallerySolitaire
+  661  ls
+  662  npm start
+  663  cd "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/.Trash"
+  664  cd gallery-solitaire
+  665  ls
+  666  ls -alt
+  667  pwd
+  668  cd
+  669  cd icloud/0000develop/cordova
+  670  ls
+  671  cd gallery-solitaire
+  672  npm start
+  673  pwd
+  674  cd ..
+  675  ls
+  676  history 100
+  677  ext-gen app -i
+  678  sencha cordova init com.mapresso.gallery GallerySolitaire
+  679  pwd
+  680  cd GallerySolitaire
+  681  sencha cordova init com.mapresso.gallery GallerySolitaire
+  682  sencha app build modern
+  683  setenv
+  684  env
+  685  ExtJS-7-SDK
+  686  ExtJS-7-SDK
+  687  sencha app build modern
+  688  cordova platform add ios
+  689  ls
+  690  cd cordova
+  691  cordova platform add ios
+  692  cd ..
+  693  ls
+  694  sencha app build modern
+  695  history 25
+  696  sencha app run
+  697  sencha app run
+  698  sencha app build modern
+  699  sencha app run
+  700  sencha app run
+  701  sencha app build modern
+  702  sencha app run
+  703  sencha app build modern
+  704  sencha app run
+  705  sencha app build
+  706  sencha app build modern
+  707  sencha app build
+  708  sencha app run
+  709  sencha app run modern
+  710  cordova -v
+  711  sencha app run 
+  712  sencha app build
+  713  sencha app build
+  714  pwd
+  715  sencha app refresh
+  716  sencha app refresh modern
+  717  sencha app build modern
+  718  sencha app run modern
+  719  sencha app run modern
+  720  sencha app run modern
+  721  sencha --version
+  722  sencha -v
+  723  sencha
+  724  /Users/adi/bin/Sencha/Cmd/7.afsd
+  725  tns preview
+  726  ls
+  727  pwd
+  728  npm install --save processingjs
+  729  npm install --save processing.js
+  730  veu
+  731  vue
+  732  vue create GallerySolitaire
+  733  vue create gallery-solitaire
+  734  npm serve
+  735  ls
+  736  npm run serve
+  737  cd gallery-solitaire
+  738  npm run serve
+  739  edit
+  740  code 
+  741  code .
+  742  cd ..
+  743  finder
+  744  open .
+  745  vue create gallery-solitaire
+  746  cd gallery-solitaire
+  747  npm run serve
+  748  pwd
+  749  open
+  750  open .
+  751  cd icloud/0000develop/Develop
+  752  ls
+  753  cd sencha
+  754  ls
+  755  ls -alt
+  756  cd ..
+  757  ls
+  758  cd Gallery30
+  759  ls
+  760  mkdir senchatest
+  761  cd senchatest
+  762  ls
+  763  pwd
+  764   1 <html>\n 2 <html>\n 3 <head>\n 4   <title>Hello Web - Processing.js Test</title>\n 5   <script src="processing-1.3.6.min.js"></script>\n 6 </head>\n 7 <body>\n 8   <h1>Processing.js Test</h1>\n 9   <p>This is my first Processing.js web-based sketch:</p>\n10   <canvas data-processing-sources="hello-web.pde"></canvas>\n11 </body>\n12 </html
+  765  python -m SimpleHTTPServer 8000
+  766  cd Processingjs\ _\ compiler
+  767  python -m SimpleHTTPServer 8000
+  768  history
+  769  npm-check -u
+  770  pwd
+  771   c ..
+  772  cd ..
+  773  ls
+  774  cd g3a
+  775  ls
+  776  npm-check -u
+  777  historynpm i npm-check
+  778  npm i npm-check
+  779  npm i npm-check
+  780  npm audit fix
+  781  npm audit 
+  782  history
+  783  history 1000
+  784  history 100
+  785  tns preview
+  786  tns preview
+  787  tns debug ios
+  788  tns preview
+  789  tns preview
+  790  tns preview
+  791  tns plugin add nativescript-canvas
+  792  tns preview
+  793  pwd
+  794  pwd
+  795  cd /Applications
+  796  cd touch-2.4.2
+  797  ls
+  798  sencha generate app com.mapresso.gallery  ~/GS30b
+  799  cd
+  800  cd GS30b
+  801  ls
+  802  sencha cordova init com.mapresso.gallery GallerySolitaire
+  803  npm install -g cordova
+  804  npm install -g npm 
+  805  sencha cordova init com.mapresso.gallery GallerySolitaire
+  806  cd cordova
+  807  ls
+  808  cordova plugin add https://github.com/hypery2k/cordova-email-plugin.git
+  809  cordova plugin add cordova-plugin-inappbrowser
+  810  cordova plugin add cordova-plugin-email
+  811  cordova plugin list
+  812  cd ..
+  813  pwd
+  814  ls
+  815  sencha pp build native
+  816  sencha app build native
+  817  sencha app build native
+  818  ls
+  819  cd cordova
+  820  ls
+  821  cordova plugin list
+  822  cordova plugin list
+  823  cd ..
+  824  sencha app build native
+  825  xcode-select --install
+  826  sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+  827  sencha app build native
+  828  open cordova/platforms/ios/GallerySolitaire.xcodeproj/
+  829  pwd
+  830  sencha build ios
+  831  sencha app build ios
+  832  pwd
+  833  ls
+  834  sencha app build$
+  835  sencha app build
+  836  sencha app build
+  837  sencha app build
+  838  sencha web start
+  839  sencha app build ios
+  840  sencha
+  841  sencha app
+  842  sencha app build 
+  843  sencha app build native
+  844  sencha web start
+  845  history
+  846  pwd
+  847  ls
+  848  cd cord
+  849  cd cordova
+  850  ls
+  851  cd www
+  852  ls
+  853  python -m SimpleHTTPServer 8000\n
+  854  python -m SimpleHTTPServer 8811\n
+  855  ls
+  856  cd ..
+  857  ls
+  858  cd platforms/ios
+  859  ls
+  860  cd www
+  861  ls
+  862  python -m SimpleHTTPServer 8811\n
+  863  cd
+  864  pwd
+  865  ls
+  866  cd icloud/0000develop
+  867  ls
+  868  cd GallerySolitaire
+  869  ls
+  870  cd GallerySolitaire
+  871  ls
+  872  python -m SimpleHTTPServer 8811\n
+  873  cd cordova
+  874  ls
+  875  cd www
+  876  ls
+  877  python -m SimpleHTTPServer 8811\n
+  878  pwd
+  879  cd ../../..
+  880  ls
+  881  cd ..
+  882  ls
+  883  cd /Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/Develop/Gallery30/GS25_minimal/index.html
+  884  cd /Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/Develop/Gallery30/GS25_minimal
+  885  cd "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/Develop/Gallery30/GS25_minimal/"
+  886  pwd
+  887  ls
+  888  python -m SimpleHTTPServer 8811\n
+  889  python -m SimpleHTTPServer 8811\n
+  890  npm install -g cordova
+  891  npm login --registry=https://sencha.myget.org/F/community/npm/ --scope=@sencha
+  892  npm login --registry=https://sencha.myget.org/F/community/npm/ --scope=@sencha
+  893  npm login --registry=https://sencha.myget.org/F/community/npm/ --scope=@sencha
+  894  npm login --registry=https://sencha.myget.org/F/community/npm/ --scope=@sencha\n
+  895  npm install -g @sencha/ext-gen
+  896  ext-gen app -i
+  897  ls
+  898  cd gallery
+  899  npm start
+  900  npm start
+  901  npm start
+  902  java
+  903  java
+  904  npm start
+  905  pwd
+  906  ls
+  907  cat galleryjs.pde graphparams.pde Card.pde CardPile.pde SpecialCardPiles.pde Movers.pde MoveStack.pde Statistics.pde Button.pde My.pde > allgallery.pde
+  908  pwd
+  909  cd nativescript
+  910  history
+  911  history 300
+  912  history 300 | grep tns
+  913  tns preview
+  914  ls
+  915  cd GS\ nat\ 1
+  916  tns preview
+  917  ls -alt
+  918  mv .git ../GallerySolitaire
+  919  mv .gitignore ../GallerySolitaire
+  920  cat *.pde > ~/Desktop/all/all.pde
+  921  cat *.pde >/all.pde
+  922  cat *.pde > all.pde
+  923  vue
+  924  vue create gs
+  925  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 generate app com.mapresso.mini MiniTest
+  926  pwd
+  927  ls
+  928  cd ..
+  929  sencha build app native
+  930  pwd
+  931  cd cordova
+  932  cordova
+  933  cordova buildios
+  934  cordova build ios
+  935  cd ..
+  936  cordova build ios
+  937  sencha
+  938  sencha app build
+  939  sencha app build ios
+  940  sencha app upgrade
+  941  sencha app upgrade
+  942  sencha
+  943  pwd
+  944  cd ..
+  945  cd ..
+  946  ls
+  947  cd Develop
+  948  ls
+  949  cd Gallery30
+  950  l
+  951  ls
+  952  cd test
+  953  mkdir test
+  954  cd test
+  955  sencha generate app -GS .
+  956  sencha generate app -ext GS .
+  957  ls
+  958  ls -a
+  959  sencha build app
+  960  sencha app build
+  961  pwd
+  962  cd ..
+  963  mkdir testcordova
+  964  cd testcordova
+  965  $
+  966  ls
+  967  npm install -g cordova
+  968  cordova create GaSo
+  969  ls
+  970  cd GaSo
+  971  LS
+  972  cordova platform add ios
+  973  ls
+  974  cordova run ios
+  975  cordova platform
+  976  ls
+  977  curl "https://api.oldmapsonline.org/1.0/collections" -H "Authorization: Token b178668a-35b9-4242-bd7a-b3f581cecda9"
+  978  pwd
+  979  cordova
+  980  cordova build
+  981  pwd
+  982  cd /Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/Develop/Gallery30/vue/Gallery30/gallery-solitaire/
+  983  vue add cordova
+  984  pef
+  985  pwd
+  986  ls
+  987  cd gallery-solitaire/l
+  988  cd gallery-solitaire
+  989  vue add cordova
+  990  npm run serve
+  991  pwd
+  992  ld
+  993  ls
+  994  cd gallery-solitaire
+  995  ls
+  996  npm run serve
+  997  ls
+  998  ls -alt
+  999  pwd
+ 1000  cd cord
+ 1001  pwd
+ 1002  pwd
+ 1003  history
+ 1004  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1005  pwd
+ 1006  pwd
+ 1007  ls
+ 1008  ls
+ 1009  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1010  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1011  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1012  cd cordova
+ 1013  cordova platform add ios
+ 1014  cordova platform add browser
+ 1015  cd ..
+ 1016  cd cordova
+ 1017  ls
+ 1018  cordova pugin
+ 1019  cordova plugin
+ 1020  cordova plugin add cordova-plugin-email\ncordova plugin add cordova-plugin-inappbrowser\ncordova plugin add cordova-plugin-statusbar\ncordova plugin add cordova-plugin-whitelist\ncordova plugin add cordova-sqlite-storage\ncordova plugin add cordova-plugin-hidden-statusbar-overlay\ncordova plugin list
+ 1021  cordova list
+ 1022  cordova plugin list
+ 1023  cd ..
+ 1024  history
+ 1025  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1026  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1027  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1028  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1029  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1030  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1031  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1032  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1033  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1034  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 cordova init com.mapresso.gallery GallerySolitaire
+ 1035  npm install --save cordova-ios\n\n cordova platform rm ios\n cordova platform add iOS\n\ncd cordova\ncordova plugin add cordova-plugin-email\ncordova plugin add cordova-plugin-inappbrowser\ncordova plugin add cordova-plugin-statusbar\ncordova plugin add cordova-plugin-whitelist\ncordova plugin add cordova-sqlite-storage\ncordova plugin add cordova-plugin-hidden-statusbar-overlay\n
+ 1036  cd ..
+ 1037  ls
+ 1038  heistory
+ 1039  history
+ 1040  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1041  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1042  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1043  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1044  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1045  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1046  cd cordova
+ 1047  cordova plugin
+ 1048  cordova plugin add cordova-plugin-console
+ 1049  cd ..
+ 1050  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1051  cd cordova
+ 1052  cordova plugin
+ 1053  cordova plugin remova  cordova-plugin-console
+ 1054  cd ..
+ 1055  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1056  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1057  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1058  cd cordova
+ 1059  history
+ 1060  cordova plugin
+ 1061  pwd
+ 1062  cd ..
+ 1063  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1064  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1065  cs cordova;cordova plugin; cd ..
+ 1066  cd cordova;cordova plugin; cd ..
+ 1067  cd cordova
+ 1068  pwd
+ 1069  cd GallerySolitaire
+ 1070  cd GallerySolitaire
+ 1071  cd cordova;cordova plugin; cd ..
+ 1072  history
+ 1073  ¨1064
+ 1074  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1075  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1076  pwd
+ 1077  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1078  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1079  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1080  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1081  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1082  pwd
+ 1083  history
+ 1084  cd cordova;cordova plugin; cd ..
+ 1085  cd cordova 
+ 1086  cordova plugin remove cordova-plugin-hidden-statusbar-overlay
+ 1087  cd ..
+ 1088  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1089  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1090  cp -r resources cordova/www\ncp -r resources cordova/platforms/ios/www
+ 1091  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build broser
+ 1092  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build browser
+ 1093  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build 
+ 1094  history
+ 1095  cd cordova
+ 1096  cordova prepare
+ 1097  pwd
+ 1098  cordova plugin
+ 1099  cordova plugin remove cordova-plugin-statusbar
+ 1100  cd ..
+ 1101  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1102  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1103  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1104  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1105  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1106  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1107  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 cordova init com.mapresso.gallery GallerySolitaire
+ 1108  cd cordova
+ 1109   cordova platform rm ios\n cordova platform add iOS\n
+ 1110  pef
+ 1111  pwd
+ 1112  cd ..
+ 1113  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1114  cd cordova
+ 1115  cordova platform
+ 1116  cordova platform add ios
+ 1117  cordova platform add browser
+ 1118  cd ..
+ 1119  ls
+ 1120  pwd
+ 1121  cd
+ 1122  cd /Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/GallerySolitaire/GallerySolitaire/
+ 1123  ls
+ 1124  cd "/Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/GallerySolitaire/GallerySolitaire/"
+ 1125  ls
+ 1126  /Users/adi/Library/Mobile Documents/com~apple~CloudDocs/0000develop/GallerySolitaire/GallerySolitaire/
+ 1127  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 cordova init com.mapresso.gallery GallerySolitaire\n
+ 1128  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84
+ 1129  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 cordova platform
+ 1130  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 cordova platforms
+ 1131  cd cordova
+ 1132  cordova platform
+ 1133  cordova platfom ios
+ 1134  cordova platfom add ios
+ 1135  cordova platform add ios
+ 1136  cordova platform add browser
+ 1137  cd ..
+ 1138  sencha
+ 1139  which sencha
+ 1140  history
+ 1141  ls
+ 1142  senc app build ios
+ 1143  sencha app build ios
+ 1144  pwd
+ 1145  cordova build ios
+ 1146  pwd
+ 1147  sench acordova build ios
+ 1148  sencha cordova build ios
+ 1149  sencha cordova build ios
+ 1150  history
+ 1151  history 1000
+ 1152  sencha app build ios
+ 1153  sencha --version
+ 1154  sencha
+ 1155  sencha app build 
+ 1156  sencha app build native
+ 1157  sencha app build ios
+ 1158  sencha app build ios
+ 1159  cd cordova
+ 1160  cordova plugin
+ 1161  cordova plugin add cordova-plugin-statusbar\n
+ 1162  cordova plugin add cordova-sqlite-storage\n
+ 1163  cd ..
+ 1164  history
+ 1165  sencha app build ios
+ 1166  cd cordova; cordova plugin; cd ..
+ 1167  cd cordova
+ 1168  cordova plugin add cordova-plugin-email\ncordova plugin add cordova-plugin-inappbrowser
+ 1169  cd ..
+ 1170  sencha app build ios
+ 1171  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build native;cd cordova;cordova prepare ios;cd ..
+ 1172  /Users/adi/bin/Sencha/Cmd/sencha-7.2.0.84 app build ios;cd cordova;cordova prepare ios;cd ..
+ 1173  cordova prepare
+ 1174  pwd
+ 1175  cd cordova
+ 1176  cordova prepare
+ 1177  cd ..
+ 1178  ls
+ 1179  sencha app build native
+ 1180  pwd
+ 1181  sencha cordova init com.mapresso.gallery GallerySolitaire
+ 1182  sencha app build native
+ 1183  cd cordova
+ 1184  cordova platform add ios
+ 1185  cd ..
+ 1186  sencha app build native
+ 1187  sencha app build native
+ 1188  sencha app build native
+ 1189  cordova --version
+ 1190  pwd
+ 1191  cd cordova
+ 1192  cordova platform remove ios
+ 1193  cordova platform remove ios
+ 1194  cordova platform add iso@5.1.1
+ 1195  cordova platform add ios@5.1.1
+ 1196  cd ..
+ 1197  pwd
+ 1198  history
+ 1199  sencha app build native
+ 1200  sencha app build native
+ 1201  sencha app build native
+ 1202  cd cordova
+ 1203  cordova plugin
+ 1204  pwd
+ 1205  cd ..
+ 1206  pwd
+ 1207  cd cordova
+ 1208  cordova plugin
+ 1209  cordova plugin add cordova-plugin-inappbrowser\ncordova plugin add cordova-plugin-statusbar\n
+ 1210   cordova-sqlite
+ 1211  cordova plugin add  cordova-sqlite-storage
+ 1212  pwd
+ 1213  cd ..
+ 1214  history
+ 1215  sencha app build native
+ 1216  cd cordov
+ 1217  cd cordova
+ 1218  cordova plugin list
+ 1219  cordova plugin
+ 1220  cordova platnform
+ 1221  cordova platform
+ 1222  cd ..
+ 1223  sencha app build native
+ 1224  sencha app build native
+ 1225  pwd
+ 1226  cd cordova
+ 1227  ls
+ 1228  cordova plugin
+ 1229  cordova plugin add cordova-plugin-email
+ 1230  cordova plugin
+ 1231  cd ..
+ 1232  sencha app build native
+ 1233  cd cordova
+ 1234  cordova prepare
+ 1235  cd ,,
+ 1236  cd ..
+ 1237  cd cordova
+ 1238  cordova plugin add cordova-plugin-console\n
+ 1239  cd ..
+ 1240  sencha app build native
+ 1241  cd cordova
+ 1242  cordova plugin list
+ 1243  cordova plugin rm cordova-plugin-conolse
+ 1244  cordova plugin rm cordova-plugin-console
+ 1245  cordova platform
+ 1246  cordova platform add browser
+ 1247  cd ..
+ 1248  sencha app build browser
+ 1249  sencha app build web
+ 1250  sencha app build web
+ 1251  xcodebuild -i
+ 1252  xcodebuild -list
+ 1253  sencha app build 
+ 1254  sencha app build 
+ 1255  sencha app refresh
+ 1256  sencha app refresh
+ 1257  sencha app refresh
+ 1258  sencha app refresh
+ 1259  sencha app build
+ 1260  sencha app build native
+ 1261  sencha app build native
+ 1262  sencha app build
+ 1263  cd cordova
+ 1264  ls
+ 1265  cordova plugin 
+ 1266  cd ..
+ 1267  sencha app build native
+ 1268  sencha app build native
+ 1269  sencha app build native
+ 1270  sencha app build native
+ 1271  sencha app build native
+ 1272  sencha app build native
+ 1273  sencha app build native
+ 1274  sencha app build native
+ 1275  sencha app build native
+ 1276  sencha app build native
+ 1277  sencha app build native
+ 1278  sencha app build native
+ 1279  sencha app build native
+ 1280  pwd
+ 1281  pwd
+ 1282  sencha app build native
+ 1283  sencha app build native
+ 1284  sencha app build native
+ 1285  sencha app build native
+ 1286  sencha app build native
+ 1287  history
+ 1288  cordova
+ 1289  cordova -v
+ 1290  cpwd
+ 1291  pwd
+ 1292  cd cordova
+ 1293  cordova plugin ls
+ 1294  cordova platform ls
+ 1295  cordova -v
+ 1296  history
+ 1297  history 1
+ 1298  pwd
+ 1299  cd ..

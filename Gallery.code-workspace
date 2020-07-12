@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "cordova_bis_20200703"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "GallerySolitaire"
+	}
+}

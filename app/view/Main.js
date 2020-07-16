@@ -9,6 +9,7 @@ global_steps = 55;
 global_mtime = 200;
 global_sayAuto = 0;
 global_auto = 1;
+global_show = 1;
 global_csv = "";
 global_colorblind = 2; // 1: blau / 2: grün
 global_cardface = 2;
@@ -50,13 +51,10 @@ Ext.define('com.mapresso.gallery.view.Main', {
       html: '<canvas id="sketch" width="640" style="width:320px" data-processing-sources="resources/data/galleryjs/galleryjs.pde resources/data/galleryjs/graphparams.pde resources/data/galleryjs/Card.pde resources/data/galleryjs/CardPile.pde resources/data/galleryjs/SpecialCardPiles.pde resources/data/galleryjs/Movers.pde resources/data/galleryjs/MoveStack.pde resources/data/galleryjs/Statistics.pde resources/data/galleryjs/Button.pde resources/data/galleryjs/My.pde"></canvas>'
     }, {
       title: 'Statistics',
-   //     iconCls: 'icomoon-stats',
       iconCls: 'chart2',
       items: [{
         xtype: 'panel',
         id: 'stattext',
-        //               styleHtmlCls: 'rules',
-        // height: 425,
         height: '100%',
         html: `
           <h2>Your Results</h2>
@@ -102,25 +100,14 @@ Ext.define('com.mapresso.gallery.view.Main', {
       first: true,
 
       listeners: {
-      /*              'add': function (panel) {
-             console.log('add');
-          },
-           'activate': function (panel) {
-             console.log('activate');
-          },
-          */
+
         'show': function (panel) {
           this.old_speed = global_mtime;
-          //                   console.log('show');
           this.first = false;
           // console.log(global_mtime);
           Ext.getCmp('speed').setValue(-this.old_speed);
           this.old_cardface = global_cardface;
-//          Ext.getCmp('cardfaces').down('radiofield[name=cardface]').setGroupValue(this.old_cardface);
-
           this.old_evaluations = global_evaluations;
-//          Ext.getCmp('evaluations').down('radiofield[name=evaluation]').setGroupValue(this.old_evaluations);
-          //x                    Ext.getCmp('colorschemes').down('radiofield[name=colorscheme]').setGroupValue(global_colorblind);
         },
 
         'hide': function (panel) {
@@ -135,8 +122,6 @@ Ext.define('com.mapresso.gallery.view.Main', {
             global_steps = Math.min(global_steps, 150);
             global_steps = Math.max(global_steps, 1);
           }
- //         global_cardface = Ext.getCmp('cardfaces').down('radiofield[name=cardface]').getGroupValue();
-  //        global_evaluations = Ext.getCmp('evaluations').down('radiofield[name=evaluation]').getGroupValue();
           if (Processing !== 'undefined') {
             if (Processing.getInstanceById('sketch')) {
               if (this.old_cardface !== global_cardface) {
@@ -146,7 +131,6 @@ Ext.define('com.mapresso.gallery.view.Main', {
               Processing.getInstanceById('sketch').doStatisticsGraphInit();
             }
           }
-        //x                   global_colorblind = Ext.getCmp('colorschemes').down('radiofield[name=colorscheme]').getGroupValue();
           setAllPrefs();
         }
       },
@@ -154,7 +138,6 @@ Ext.define('com.mapresso.gallery.view.Main', {
       items: [{
         xtype: 'label',
         id: 'about',
-        //            styleHtmlCls: 'rules',
         styleHtmlContent: true,
         html: '<div><img src="resources/data/img/mittelholzer_strip.png" width="100%"></div><div class="rules"><center><h1>Gallery Solitaire</h1>Version 2.6, &copy; 2020, Adrian Herzog<br/><br/>' +
         '<table border=0>' + 
@@ -171,42 +154,9 @@ Ext.define('com.mapresso.gallery.view.Main', {
         '<td align="center" width=31><a href="#" onclick="cordova.InAppBrowser.open(encodeURI(\'https://www.facebook.com/Gallery-Solitaire-113763543718658#phonegap=external\'), \'_system\', \'location=yes\')">' +
         '<img src="resources/data/img/f_logo_RGB-Blue_58.png" width="29" "height="29" align="middle"></a></td>' +
 
-
-
         '</tr></table>'
-
-/*
-        '<table border=0>' + 
-
-        '<tr>' +
-        '<td align="center" width=31><a href="#" onclick="cordova.InAppBrowser.open(encodeURI(\'http://gallery.mapresso.com#phonegap=external\'), \'_system\', \'location=yes\')">' +
-        '<img src="resources/data/img/appicon-Small.png" width="29" "height="29" align="middle"></a></td>' +
-        '<td><a href="#" onclick="cordova.InAppBrowser.open(encodeURI(\'http://gallery.mapresso.com#phonegap=external\'), \'_system\', \'location=yes\')">' +
-        'http://gallery.mapresso.com</a></td></tr>' + 
-
-        '<tr>' +
-        '<td align="center" width=31><a href="#" onclick="cordova.InAppBrowser.open(encodeURI(\'https://www.facebook.com/Gallery-Solitaire-113763543718658#phonegap=external\'), \'_system\', \'location=yes\')">' +
-        '<img src="resources/data/img/FB_logo_blue_29.png" width="29" "height="29" align="middle"></a></td>' +
-        '<td><a href="#" onclick="cordova.InAppBrowser.open(encodeURI(\'https://www.facebook.com/Gallery-Solitaire-113763543718658#phonegap=external\'), \'_system\', \'location=yes\')">' +
-        'http://https://www.facebook.com/Gallery-Solitaire-113763543718658</a></td></tr>' + 
-
-        '<tr>' +
-        '<td align="center" width=31><a href="#" onclick="cordova.InAppBrowser.open(encodeURI(\'http://twitter.com/gallerysol1#phonegap=external\'), \'_system\', \'location=yes\')">' +
-        '<img src="resources/data/img/Twitter_logo_blue_32.png" width="29" "height="29" align="middle"></a></td>' +
-        '<td><a href="#" onclick="cordova.InAppBrowser.open(encodeURI(\'http://twitter.com/gallerysol1#phonegap=external\'), \'_system\', \'location=yes\')">' +
-        'http://twitter.com/gallerysol1</a></td></tr>' + 
-        '</table>' */
-      },
-    /* {
-        xtype: 'sliderfield',
-        id: 'speed'
- //                  label: 'Speed',
-  //                labelWidth: '50%',
-
-  //                 minValue: -500,
-  //                 maxValue: 0 
- }, */
-        {
+      },        
+      {
           xtype: 'fieldset',
           title: '<div class="fst">Animation Speed</div>',
           width: "100%",
@@ -214,113 +164,31 @@ Ext.define('com.mapresso.gallery.view.Main', {
           items: [{
             xtype: 'sliderfield',
             id: 'speed',
-           //                label: 'Speed',
-           //                 labelWidth: '30%',
             minValue: -1000,
             maxValue: -1,
 
             listeners: {
               'change': function (me, sl, thumb, newValue, oldValue, eOpts) {
-            //                            console.log(newValue);
               }
             }
           }]
-  /*        }, {
-        instructions: 'Nostalgic card face: as in old Mac Gallery versions.',
-        xtype: 'fieldset',
-        title: '<div class="fst">Card Faces</div>',
-        name: 'cardfaces',
-        id: 'cardfaces',
-        defaults: {
-          xtype: 'radiofield',
-          labelWidth: '80%',
-          name: 'cardface'
-        },
-        items: [{
-          value: 2,
-          checked: global_cardface === 2,
-          label: 'Classic'
-        }, {
-          value: 1,
-          checked: global_cardface === 1,
-          label: 'Nostalgic'
-        }]
-      }, {
-
-        instructions: 'Number of evaluation tries.',
-        xtype: 'fieldset',
-        title: '<div class="fst">Evaluations</div>',
-        name: 'evaluations',
-        id: 'evaluations',
-        defaults: {
-          xtype: 'radiofield',
-          labelWidth: '80%',
-          name: 'evaluation'
-        },
-        items: [{
-          value: 1000,
-          checked: global_evaluations === 1000,
-          label: '1000 games'
-        }, {
-          value: 250,
-          checked: global_evaluations === 250,
-          label: '250 games'
-        }]
-             }, {
-        xtype: 'fieldset',
-        instructions: '&nbsp;&nbsp;&nbsp;&nbsp;Color scheme in statistical evaluations.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',
-        title: 'Color Scheme',
-        name: 'colorschemes',
-        id: 'colorschemes',
-        defaults: {
-          xtype: 'radiofield',
-          labelWidth: '50%',
-          name: 'colorscheme'
-        },
-        items: [{
-          value: 2,
-          checked: global_colorblind == 2,
-          label: 'Red / Green'
-        }, {
-          value: 1,
-          checked: global_colorblind == 1,
-         label: 'Red / Blue'
-        }]
-       */
       }, {
         xtype: 'fieldset',
         title: '<div class="fst">Computer Aided Playing</div>',
         instructions: '<b>Auto move reasons</b><div style="text-align:left"><br/><b>Twin</b> = card of same suit and rank<br/><br/><ol><li><b>T ok</b>: Twin is already ok.<li><b>2 poss</b>: There are two possibilities for this card.<li><b>F clean</b>: Foundation row is completely clear.<li><b>just 1</b>: At the end and just one card movable.<li><b>T row</b>: Twin is on the same foundation row.<li><b>Tbelow</b>: Twin lies under this card.<li><b>T botm</b>: Twin (image) lies directly at the bottom.<li><b>TuBase</b>: Twin lies directly under its own base.<li><b>Tjammed</b>: Twin unreachable (jammed)</ol></div>',
         items: [
-          /*               {
-              xtype: 'selectfield',
-              label: 'Explain',
-              id: 'helplevel',
-              name: 'explain',
-              options: [
-                {
-                  text: 'No Help',
-                  value: 0
-                }, {
-                  text: 'Help Numbers',
-                  value: 8
-                }, {
-                  text: 'Help Arrows',
-                  value: 9
-                }, {
-                  text: 'Numbers + Arrows',
-                  value: 10
-                }
-              ],
+            {
+              xtype: 'togglefield',
+              name: 'sayNoHelp',
+              label: 'Show movable cards',
+              labelWidth: '80%',
+              value: 1,
               listeners: {
-                change: function (selectbox, newValue, oldValue) {
-                  if (newValue !== null && !selectbox.initdata) {
-                   global_helplevel = newValue;
-                   window.localStorage.setItem('helplevel', global_helplevel);
-                  }
+                change: function (checkboxfield, newValue, oldValue) {
+                  global_show = newValue ? 1 : 0;
                 }
               }
-            },*/
+            },           
             {
               xtype: 'togglefield',
               name: 'sayAuto',
@@ -334,7 +202,7 @@ Ext.define('com.mapresso.gallery.view.Main', {
             },
             {
               xtype: 'togglefield',
-              name: 'sayNoHelp',
+              name: 'sayNoAuto',
               label: 'Do auto moves',
               labelWidth: '80%',
               value: 1,
@@ -344,6 +212,7 @@ Ext.define('com.mapresso.gallery.view.Main', {
                 }
               }
             }
+
             ]
       }, {
         xtype: 'fieldset',
@@ -353,7 +222,6 @@ Ext.define('com.mapresso.gallery.view.Main', {
           xtype: 'button',
           ui: 'action',
           width: "100%",
-          //                   ui: 'decline',
           handler: function (button, event) {
             doDumpDb();
           },
@@ -367,7 +235,6 @@ Ext.define('com.mapresso.gallery.view.Main', {
           xtype: 'button',
           ui: 'action',
           width: "100%",
-          //                   ui: 'decline',
           handler: function (button, event) {
             Ext.Msg.confirm('Warning', 'You \'ll loose all the results of previous games. Are you sure to reset the statistics?', function (btn) {
               if (btn === "yes") {

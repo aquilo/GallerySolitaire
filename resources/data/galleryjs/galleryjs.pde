@@ -430,7 +430,7 @@ void draw() {
   dirty = cardMoving();
   for (int i = 0; i < 34; i++) {
     if (allPiles[i].autoMovable) {
-      if (!humanPlayer || (global_sayAuto == 0 && global_auto !== 0)) allPiles[i].doAutoClick();
+      if (!humanPlayer || (global_sayAuto == 0 && global_auto == 1)) allPiles[i].doAutoClick();
 //      if (global_sayAuto) allPiles[i].doAutoClick();
       dirty = true;
       return;

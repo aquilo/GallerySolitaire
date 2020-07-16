@@ -57,11 +57,11 @@ class Card {
 
     // os.mynoStroke();
     os.mystroke(180);
-    if (jammed && (global_auto == 1)) {
+    if (jammed && (global_show == 1)) {
       os.myfill3(180, 180, 180);
       os.myrect(x + 34, y + 2, 36, 12);
     }
-    if (jammer && (global_auto == 1)) {
+    if (jammer && (global_show == 1)) {
       os.myfill3(0, 200, 0);
       os.mynoStroke();
       os.myrect(x + 38, y + 5, 30, 7);
@@ -83,25 +83,25 @@ class Card {
     } else {
       image(suitImages[suit], x + 26, y + 1);
     }
-    if (jammed && (global_auto == 1)) {
+    if (jammed && (global_show == 1)) {
       os.myfill3(0, 200, 0);
       os.myrect(x + 11, y + 3, 14, 5);
     }
-    if (jammer && (global_auto == 1)) {
+    if (jammer && (global_show == 1)) {
       os.myfill3(0, 200, 0);
       os.myrect(x + 11, y + 4, 14, 3);
     }
   }
 
   void drawMovable(int x, int y) {
-    if (global_auto === 0) return;
+    if (global_show === 0) return;
     os.mynoStroke();
     os.myfill4(255, 127, 0, 80);
     os.myrect(x, y, CARDWIDTH, CARDHEIGHT);
   }
 
   void drawAutoMovable(int x, int y) {
-    if (global_auto === 0) return;
+    if (global_show === 0) return;
     if (global_sayAuto != 1) return;
     os.mynoStroke();
     os.myfill4(0, 255, 100, 80);
@@ -115,6 +115,7 @@ class Card {
     } else {
       draw(x, y);
       if (autoMovable) {
+        if (global_sayAuto != 1) drawMovable(x, y);
         drawAutoMovable(x, y);
         return;
       }
@@ -122,7 +123,7 @@ class Card {
         drawMovable(x, y);
       }
     }
-    if (jammer && (global_auto == 1)) {
+    if (jammer && (global_show == 1)) {
       os.myfill3(0, 200, 0);
       if (global_cardface == 2) {
         os.myfill3(0, 200, 0);

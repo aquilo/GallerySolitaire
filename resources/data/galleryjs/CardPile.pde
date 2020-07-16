@@ -124,8 +124,8 @@ class CardPile {
 
   void doAutoMovableCheck() {
     autoMovable = doAllAutoMovableChecks();
-    if ((global_auto !== 0) && humanPlayer) return;
-    if (autoMovable && global_sayAuto == 0) doAutoClick();
+    if ((global_auto == 0) && humanPlayer) return;
+    if (autoMovable && global_sayAuto == 0 && global_auto == 1) doAutoClick();
   }
 
   boolean doAllAutoMovableChecks() {

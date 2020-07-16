@@ -150,10 +150,10 @@ table.statsummary td, th {
 }
 
 .valbetter {
-    color:rgb(5, 75, 5)
+    color:rgb(5, 145, 5)
 }
 .valworse {
-    color:rgb(82, 4, 4)
+    color:rgb(152, 4, 4)
 }
 
 .x-html a {
